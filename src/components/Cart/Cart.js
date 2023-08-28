@@ -1,9 +1,9 @@
 import { useContext } from 'react';
-
 import Modal from '../UI/Modal';
 import CartItem from './CartItem';
 import classes from './Cart.module.css';
 import CartContext from '../../store/cart-context';
+import { AiOutlineClose } from 'react-icons/ai';
 
 const Cart = (props) => {
   const cartCtx = useContext(CartContext);
@@ -19,8 +19,18 @@ const Cart = (props) => {
     cartCtx.addItem({ ...item, amount: 1 });
   };
 
+  const clearCartHandler = () => {
+    cartCtx.clearCart();
+    props.onClose();
+  };
+
   const cartItems = (
     <ul className={classes['cart-items']}>
+      <div className={classes.closeBtnConntainer}>
+        <button className={classes.closeButton} onClick={props.onClose}>
+          <AiOutlineClose />
+        </button>
+      </div>
       {cartCtx.items.map((item) => (
         <CartItem
           key={item.id}
@@ -42,8 +52,8 @@ const Cart = (props) => {
         <span>{totalAmount}</span>
       </div>
       <div className={classes.actions}>
-        <button className={classes['button--alt']} onClick={props.onClose}>
-          Close
+        <button className={classes['button--alt']} onClick={clearCartHandler}>
+          Cancel
         </button>
         {hasItems && <button className={classes.button}>Order</button>}
       </div>
