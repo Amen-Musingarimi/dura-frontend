@@ -66,7 +66,12 @@ const Header = (props) => {
           >
             Shop
           </NavLink>
-          <HeaderCartButton onClick={props.onShowCart} />
+          <HeaderCartButton
+            onClick={() => {
+              handleNav();
+              props.onShowCart();
+            }}
+          />
           <button className={classes.closeMobileNav} onClick={handleNav}>
             <FaTimes />
           </button>
