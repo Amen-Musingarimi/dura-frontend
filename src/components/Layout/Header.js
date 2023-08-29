@@ -59,7 +59,7 @@ const Header = (props) => {
             Home
           </NavLink>
           <NavLink
-            to="/services"
+            to="/shop"
             exact={true}
             activeClassName={classes.active}
             onClick={handleNav}

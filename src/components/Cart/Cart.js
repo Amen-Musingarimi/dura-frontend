@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux';
 import Modal from '../UI/Modal';
 import CartItem from './CartItem';
-import classes from './Cart.module.css';
 import { AiOutlineClose } from 'react-icons/ai';
 import { removeItem, addItem, clearCart } from '../../redux/cartSlice';
+import classes from './Cart.module.css';
 
 const Cart = (props) => {
   const dispatch = useDispatch();
