@@ -1,21 +1,34 @@
-import { Fragment } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import HeaderCartButton from './HeaderCartButton';
-import mealsImage from '../../assets/grain.jpg';
-import logo from '../../assets/logo.png';
 import { NavLink } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { toggleNav } from '../../redux/navBarSlice';
+import HeaderCartButton from './HeaderCartButton';
+import mealsImage from '../../assets/grain.jpg';
+import logo from '../../assets/logo.png';
 import classes from './Header.module.css';
 
 const Header = (props) => {
   const dispatch = useDispatch();
-
   const isOpen = useSelector((state) => state.nav.isOpen);
 
   const handleNav = () => {
     dispatch(toggleNav());
   };
+
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 1024);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const navStyle = {
     position: 'fixed',
@@ -36,19 +49,19 @@ const Header = (props) => {
     <Fragment>
       <header className={classes.header}>
         <img src={logo} alt="logoImage" className={classes.logo} />
-        <nav style={navStyle}>
+        <nav style={isMobile ? navStyle : {}} className={classes.nav}>
           <NavLink
             to="/"
-            exact="true"
-            activeclassname="active"
+            exact={true}
+            activeClassName={classes.active}
             onClick={handleNav}
           >
             Home
           </NavLink>
           <NavLink
             to="/services"
-            exact="true"
-            activeclassname="active"
+            exact={true}
+            activeClassName={classes.active}
             onClick={handleNav}
           >
             Shop
