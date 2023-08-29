@@ -3,7 +3,7 @@ import Modal from '../UI/Modal';
 import CartItem from './CartItem';
 import classes from './Cart.module.css';
 import { AiOutlineClose } from 'react-icons/ai';
-import { addItem, removeItem, clearCart } from '../../redux/cartSlice';
+import { removeItem, addItem, clearCart } from '../../redux/cartSlice';
 
 const Cart = (props) => {
   const dispatch = useDispatch();
@@ -14,6 +14,7 @@ const Cart = (props) => {
       return acc + item.price * item.amount;
     }, 0)
     .toFixed(2);
+
   const hasItems = cartItems.length > 0;
 
   const cartItemRemoveHandler = (id) => {
