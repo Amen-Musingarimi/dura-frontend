@@ -1,52 +1,53 @@
-import { useContext } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Modal from '../UI/Modal';
 import CartItem from './CartItem';
 import classes from './Cart.module.css';
-import CartContext from '../../store/cart-context';
 import { AiOutlineClose } from 'react-icons/ai';
+import { addItem, removeItem, clearCart } from '../../redux/cartSlice';
 
 const Cart = (props) => {
-  const cartCtx = useContext(CartContext);
+  const dispatch = useDispatch();
+  const cartItems = useSelector((state) => state.cart.items);
 
-  const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
-  const hasItems = cartCtx.items.length > 0;
+  const totalAmount = cartItems
+    .reduce((acc, item) => {
+      return acc + item.price * item.amount;
+    }, 0)
+    .toFixed(2);
+  const hasItems = cartItems.length > 0;
 
   const cartItemRemoveHandler = (id) => {
-    cartCtx.removeItem(id);
+    dispatch(removeItem(id));
   };
 
   const cartItemAddHandler = (item) => {
-    cartCtx.addItem({ ...item, amount: 1 });
+    dispatch(addItem({ ...item, amount: 1 }));
   };
 
   const clearCartHandler = () => {
-    cartCtx.clearCart();
+    dispatch(clearCart());
     props.onClose();
   };
 
-  const cartItems = (
-    <ul className={classes['cart-items']}>
-      <div className={classes.closeBtnConntainer}>
-        <button className={classes.closeButton} onClick={props.onClose}>
-          <AiOutlineClose />
-        </button>
-      </div>
-      {cartCtx.items.map((item) => (
-        <CartItem
-          key={item.id}
-          name={item.name}
-          amount={item.amount}
-          price={item.price}
-          onRemove={cartItemRemoveHandler.bind(null, item.id)}
-          onAdd={cartItemAddHandler.bind(null, item)}
-        />
-      ))}
-    </ul>
-  );
-
   return (
     <Modal onClose={props.onClose}>
-      {cartItems}
+      <ul className={classes['cart-items']}>
+        <div className={classes.closeBtnConntainer}>
+          <button className={classes.closeButton} onClick={props.onClose}>
+            <AiOutlineClose />
+          </button>
+        </div>
+        {cartItems.map((item) => (
+          <CartItem
+            key={item.id}
+            name={item.name}
+            amount={item.amount}
+            price={item.price}
+            onRemove={() => cartItemRemoveHandler(item.id)}
+            onAdd={() => cartItemAddHandler(item)}
+          />
+        ))}
+      </ul>
       <div className={classes.total}>
         <span>Total Amount</span>
         <span>{totalAmount}</span>
