@@ -2,7 +2,7 @@ import { Fragment, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/Layout/Header';
 import Home from './components/home/Home';
-import Meals from './components/Meals/Meals';
+import Products from './components/Products/Products';
 import Cart from './components/Cart/Cart';
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
       <main>
         <Routes>
           <Route path="/" index element={<Home />} />
-          <Route path="/shop" index element={<Meals />} />
+          <Route path="/shop" index element={<Products />} />
         </Routes>
       </main>
     </Fragment>
