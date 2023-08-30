@@ -3,7 +3,7 @@ import classes from './ProductItem.module.css';
 
 const ProductItem = (props) => {
   return (
-    <li>
+    <li className={classes.mealWrapper}>
       <Link to={`/details/${props.id}`} className={classes.meal}>
         <img
           src={props.image}
@@ -14,6 +14,8 @@ const ProductItem = (props) => {
           <h3>{props.name}</h3>
           <span> | </span>
           <h3>{props.englishName}</h3>
+          <span> | </span>
+          <p className={classes.price}>${props.price}</p>
         </div>
       </Link>
     </li>
