@@ -46,46 +46,41 @@ const Header = (props) => {
   };
 
   return (
-    <Fragment>
-      <header className={classes.header}>
-        <Link to="/" exact={true}>
-          <img src={logo} alt="logoImage" className={classes.logo} />
-        </Link>
-        <nav style={isMobile ? navStyle : {}} className={classes.nav}>
-          <NavLink
-            to="/"
-            exact={true}
-            activeClassName={classes.active}
-            onClick={handleNav}
-          >
-            Home
-          </NavLink>
-          <NavLink
-            to="/products"
-            exact={true}
-            activeClassName={classes.active}
-            onClick={handleNav}
-          >
-            Shop
-          </NavLink>
-          <HeaderCartButton
-            onClick={() => {
-              handleNav();
-              props.onShowCart();
-            }}
-          />
-          <button className={classes.closeMobileNav} onClick={handleNav}>
-            <FaTimes />
-          </button>
-        </nav>
-        <button className={classes.openMobileNav} onClick={handleNav}>
-          <FaBars />
+    <header className={classes.header}>
+      <Link to="/" exact={true}>
+        <img src={logo} alt="logoImage" className={classes.logo} />
+      </Link>
+      <nav style={isMobile ? navStyle : {}} className={classes.nav}>
+        <NavLink
+          to="/"
+          exact={true}
+          activeClassName={classes.active}
+          onClick={handleNav}
+        >
+          Home
+        </NavLink>
+        <NavLink
+          to="/products"
+          exact={true}
+          activeClassName={classes.active}
+          onClick={handleNav}
+        >
+          Shop
+        </NavLink>
+        <HeaderCartButton
+          onClick={() => {
+            handleNav();
+            props.onShowCart();
+          }}
+        />
+        <button className={classes.closeMobileNav} onClick={handleNav}>
+          <FaTimes />
         </button>
-      </header>
-      <div className={classes['main-image']}>
-        <img src={mealsImage} alt="A table full of delicious food!" />
-      </div>
-    </Fragment>
+      </nav>
+      <button className={classes.openMobileNav} onClick={handleNav}>
+        <FaBars />
+      </button>
+    </header>
   );
 };
 

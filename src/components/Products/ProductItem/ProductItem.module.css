@@ -40,3 +40,10 @@
   font-size: 1.2rem;
   color: #0f1531;
 }
+
+@media only screen and (max-width: 1024px) {
+  .productImage {
+    height: 100%;
+    width: 100%;
+  }
+}
