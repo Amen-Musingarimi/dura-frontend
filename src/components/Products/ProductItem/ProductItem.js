@@ -4,7 +4,7 @@ import classes from './ProductItem.module.css';
 const ProductItem = (props) => {
   return (
     <li className={classes.mealWrapper}>
-      <Link to={`/details/${props.id}`} className={classes.meal}>
+      <Link to={`/products/${props.id}`} className={classes.meal}>
         <img
           src={props.image}
           alt="ProductImage"

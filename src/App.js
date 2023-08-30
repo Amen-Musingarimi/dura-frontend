@@ -23,7 +23,7 @@ function App() {
       <main>
         <Routes>
           <Route path="/" index element={<Home />} />
-          <Route path="/shop" index element={<Products />} />
+          <Route path="/products" index element={<Products />} />
         </Routes>
       </main>
     </Fragment>
