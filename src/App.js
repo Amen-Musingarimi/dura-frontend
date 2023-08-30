@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Header from './components/Layout/Header';
 import Home from './components/home/Home';
 import Products from './components/Products/Products';
+import ProductDetails from './components/Products/ProductDetails/ProductDetails';
 import Cart from './components/Cart/Cart';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Routes>
           <Route path="/" index element={<Home />} />
           <Route path="/products" index element={<Products />} />
+          <Route path="/products/:id" index element={<ProductDetails />} />
         </Routes>
       </main>
     </Fragment>

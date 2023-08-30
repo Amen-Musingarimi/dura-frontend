@@ -1,0 +1,52 @@
+.productDetailsContainer {
+  display: flex;
+  justify-content: flex-start;
+  gap: 4rem;
+  padding: 2rem 4rem;
+}
+
+.productDetailsContainer img {
+  width: 80%;
+  border-radius: 2rem;
+}
+
+.productTextContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.productNames,
+.productAvailability {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4rem;
+  color: #141c42;
+}
+
+.productPrice {
+  color: #a14a28;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.productAvailability,
+.productDescription {
+  font-weight: 500;
+  font-weight: 1rem;
+}
+
+.border {
+  border-bottom: 1px dotted #141c42;
+  padding-top: 0.8rem;
+  width: 90%;
+}
+
+.productDescription {
+  padding-top: 0.5rem;
+}
+
+.cartForm {
+  margin-top: 2rem;
+}

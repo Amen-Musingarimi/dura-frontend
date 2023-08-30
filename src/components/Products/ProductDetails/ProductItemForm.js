@@ -22,18 +22,22 @@ const ProductItemForm = (props) => {
 
   return (
     <form className={classes.form} onSubmit={submitHandler}>
-      <Input
-        ref={amountInputRef}
-        label="Quantity"
-        input={{
-          id: 'quantity_' + props.id,
-          type: 'number',
-          min: '1',
-          max: '1000',
-          step: '1',
-          defaultValue: '1',
-        }}
-      />
+      <div className={classes.inputsContainer}>
+        <label>
+          How many kgs do you want today? <br />
+        </label>
+        <Input
+          ref={amountInputRef}
+          input={{
+            id: 'quantity_' + props.id,
+            type: 'number',
+            min: '2',
+            max: '1000',
+            step: '1',
+            defaultValue: '1',
+          }}
+        />
+      </div>
       <button>+ Add</button>
       {!amountIsValid && <p>Please enter a valid amount.</p>}
     </form>

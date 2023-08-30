@@ -1,20 +1,41 @@
 .form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
   text-align: right;
+}
+
+.inputsContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+}
+
+.inputsContainer label {
+  font-weight: 400;
+}
+
+.inputsContainer input {
+  outline: none;
+  padding: 0.5rem;
+  border: 1px solid #141c42;
+  border-radius: 8px;
 }
 
 .form button {
   font: inherit;
   cursor: pointer;
-  background-color: #8a2b06;
-  border: 1px solid #8a2b06;
+  background-color: #141c42;
+  width: 40%;
   color: white;
-  padding: 0.25rem 2rem;
+  padding: 0.5rem 2rem;
+  border: none;
   border-radius: 20px;
   font-weight: bold;
 }
 
 .form button:hover,
 .form button:active {
-  background-color: #641e03;
-  border-color: #641e03;
+  background-color: #1e2a68;
 }
