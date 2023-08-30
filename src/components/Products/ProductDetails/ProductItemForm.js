@@ -31,7 +31,7 @@ const ProductItemForm = (props) => {
           input={{
             id: 'quantity_' + props.id,
             type: 'number',
-            min: '2',
+            min: '1',
             max: '1000',
             step: '1',
             defaultValue: '1',

@@ -1,10 +1,9 @@
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { toggleNav } from '../../redux/navBarSlice';
 import HeaderCartButton from './HeaderCartButton';
-import mealsImage from '../../assets/grain.jpg';
 import logo from '../../assets/dura.jpg';
 import classes from './Header.module.css';
 
