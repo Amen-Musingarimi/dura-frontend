@@ -1,4 +1,3 @@
-import Card from '../UI/Card';
 import ProductItem from './ProductItem/ProductItem';
 import classes from './AvailableProducts.module.css';
 import dummyImage from '../../assets/zviyo.jpg';
