@@ -1,11 +1,11 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { toggleNav } from '../../redux/navBarSlice';
 import HeaderCartButton from './HeaderCartButton';
 import mealsImage from '../../assets/grain.jpg';
-import logo from '../../assets/logo.png';
+import logo from '../../assets/dura.jpg';
 import classes from './Header.module.css';
 
 const Header = (props) => {
@@ -48,7 +48,9 @@ const Header = (props) => {
   return (
     <Fragment>
       <header className={classes.header}>
-        <img src={logo} alt="logoImage" className={classes.logo} />
+        <Link to="/" exact={true}>
+          <img src={logo} alt="logoImage" className={classes.logo} />
+        </Link>
         <nav style={isMobile ? navStyle : {}} className={classes.nav}>
           <NavLink
             to="/"
