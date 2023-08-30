@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
@@ -58,6 +58,7 @@ const Header = (props) => {
         >
           Home
         </NavLink>
+
         <NavLink
           to="/products"
           exact={true}
@@ -66,16 +67,23 @@ const Header = (props) => {
         >
           Shop
         </NavLink>
-        <HeaderCartButton
-          onClick={() => {
-            handleNav();
-            props.onShowCart();
-          }}
-        />
+        <NavLink
+          to="/about"
+          exact={true}
+          activeClassName={classes.active}
+          onClick={handleNav}
+        >
+          About
+        </NavLink>
         <button className={classes.closeMobileNav} onClick={handleNav}>
           <FaTimes />
         </button>
       </nav>
+      <HeaderCartButton
+        onClick={() => {
+          props.onShowCart();
+        }}
+      />
       <button className={classes.openMobileNav} onClick={handleNav}>
         <FaBars />
       </button>

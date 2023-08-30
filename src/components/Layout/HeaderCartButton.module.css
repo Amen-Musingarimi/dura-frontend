@@ -2,47 +2,30 @@
   cursor: pointer;
   font: inherit;
   border: none;
-  background-color: #141c42;
+  background-color: #eff1fd;
   color: white;
-  padding: 0.75rem 3rem;
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: baseline;
   border-radius: 25px;
+  margin-left: 4rem;
 }
 
 .button:hover,
 .button:active {
-  background-color: #11183d;
+  color: #11183d;
 }
 
 .icon {
-  width: 1.35rem;
-  height: 1.35rem;
-  margin-right: 0.5rem;
-}
-
-.badge,
-.cartHeading {
-  font-weight: 500;
-  font-size: 0.9rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #0e2181;
 }
 
 .badge {
-  background-color: #162052;
-  padding: 0.25rem 1rem;
-  border-radius: 25px;
-  margin-left: 1rem;
-}
-
-.cartHeading {
-  color: #fff;
-  text-decoration: none;
-}
-
-.button:hover .badge,
-.button:active .badge {
-  background-color: #141c42;
+  color: #a13408;
+  font-weight: 500;
+  font-size: 1rem;
 }
 
 .bump {
