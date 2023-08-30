@@ -50,3 +50,20 @@
 .cartForm {
   margin-top: 2rem;
 }
+
+@media only screen and (max-width: 1024px) {
+  .productDetailsContainer {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .productDetailsContainer img {
+    width: 100%;
+  }
+
+  .productNames,
+  .productAvailability {
+    gap: 1rem;
+  }
+}

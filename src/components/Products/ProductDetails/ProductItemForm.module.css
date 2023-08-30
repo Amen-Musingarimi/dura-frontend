@@ -39,3 +39,16 @@
 .form button:active {
   background-color: #1e2a68;
 }
+
+@media only screen and (max-width: 1024px) {
+  .inputsContainer {
+    gap: 1rem;
+  }
+  .inputsContainer input {
+    width: 100%;
+  }
+
+  .form button {
+    width: 100%;
+  }
+}
