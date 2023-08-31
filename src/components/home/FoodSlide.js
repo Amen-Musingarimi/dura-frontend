@@ -14,12 +14,7 @@ const FoodSlide = ({ foods }) => {
   }, [foods]);
 
   return (
-    <div
-      className={classes.foodSlideContainer}
-      style={{
-        backgroundImage: foods[currentFoodIndex]?.image, // Use image color as background
-      }}
-    >
+    <div>
       <div className={classes.foodSlide}>
         <div className={classes.fooDetails}>
           <h2 className={classes.foodName}>{foods[currentFoodIndex]?.name}</h2>

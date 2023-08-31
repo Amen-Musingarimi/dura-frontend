@@ -1,9 +1,6 @@
 .foodSlideContainer {
   width: 90%;
   height: 90%;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
   border-radius: 8px;
   box-shadow: 0 1px 18px 10px rgba(0, 0, 0, 0.25);
 }
