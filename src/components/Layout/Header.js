@@ -62,9 +62,10 @@ const Header = (props) => {
 
   return (
     <header className={classes.header}>
-      <Link to="/" exact={true}>
-        <img src={logo} alt="logoImage" className={classes.logo} />
-      </Link>
+      <h3 className={classes.logo}>
+        D<span className={classes.logoStling}>U</span>R
+        <span className={classes.logoStling}>A</span>
+      </h3>
       <nav style={isMobile ? navStyle : {}} className={classes.nav}>
         <NavLink
           to="/"

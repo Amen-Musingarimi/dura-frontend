@@ -71,9 +71,11 @@
 }
 
 .logo {
-  height: 2.5rem;
-  width: 2.5rem;
-  border-radius: 50%;
+  color: #141c42;
+}
+
+.logoStling {
+  color: #243381;
 }
 
 .closeMobileNav,

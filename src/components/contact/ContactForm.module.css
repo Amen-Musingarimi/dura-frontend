@@ -1,0 +1,125 @@
+.closeFormCont {
+  background-color: #141f53;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  color: #fff;
+}
+
+.closeButton {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.inputCover {
+  border-bottom: 1px solid #d3d3d3;
+}
+
+.formInput,
+.messageInput {
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+.formInput {
+  padding: 0.5rem 1rem;
+}
+
+.messageInput {
+  padding: 0.25rem 1rem;
+  height: 6rem;
+}
+
+.formSubmitBtn {
+  width: 100%;
+  background-color: #141f53;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.formSubmitBtn:hover {
+  background-color: #1a2970;
+}
+
+.slideIn {
+  animation: slideIn 0.5s forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.slideInForm {
+  animation: slideInForm 0.5s forwards;
+}
+
+@keyframes slideInForm {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.overlay {
+  position: fixed;
+  bottom: 2rem;
+  right: 1rem;
+  transform-origin: bottom right;
+  background-color: rgba(0, 0, 0, 0);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: 100%;
+  height: 100px;
+  pointer-events: none;
+}
+
+.contactForm {
+  background-color: #fff;
+  border-radius: 8px;
+  width: 30%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transform-origin: bottom right;
+  pointer-events: auto;
+}
+
+@media only screen and (max-width: 1024px) {
+  .contactForm {
+    width: 40%;
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  .overlay {
+    right: 5%;
+  }
+
+  .contactForm {
+    width: 90%;
+  }
+}
