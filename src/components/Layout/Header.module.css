@@ -31,6 +31,34 @@
   text-decoration: none;
 }
 
+.authButton,
+.logoutButton {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.authButton {
+  background-color: #16297e;
+  border: none;
+  color: #eff1fd;
+  margin-right: 0.5rem; /*remember to delete this */
+}
+
+.logoutButton {
+  background-color: #eff1fd;
+  color: #e04040;
+  border: 1px solid #e04040;
+}
+
+.authButton:hover {
+  background-color: #152153;
+}
+
+.logoutButton {
+  background-color: #dce0f7;
+}
+
 .active {
   color: #50c878 !important;
 }
@@ -88,7 +116,7 @@
     position: absolute;
     top: 2rem;
     right: 2rem;
-    color: rgb(224, 64, 64);
+    color: #e04040;
   }
 
   .header nav a {

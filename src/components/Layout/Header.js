@@ -1,15 +1,31 @@
-import React, { useState, useEffect, Fragment } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { toggleNav } from '../../redux/navBarSlice';
 import HeaderCartButton from './HeaderCartButton';
+import { getLocalStorage } from '../helpers/localStorage';
+import {
+  logOutUser,
+  toLogin,
+  toRegister,
+} from '../../redux/authenticationSlice';
 import logo from '../../assets/dura.jpg';
 import classes from './Header.module.css';
 
 const Header = (props) => {
   const dispatch = useDispatch();
   const isOpen = useSelector((state) => state.nav.isOpen);
+  const isAuthenticated = useSelector((state) => state.auth.token !== null);
+
+  const user = getLocalStorage('user');
+
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    dispatch(logOutUser());
+    navigate('/');
+  };
 
   const handleNav = () => {
     dispatch(toggleNav());
@@ -75,6 +91,49 @@ const Header = (props) => {
         >
           About
         </NavLink>
+        <section className={classes.navAuthWrapper}>
+          {!isAuthenticated && (
+            <div>
+              <Link to="/auth">
+                <button
+                  className={classes.authButton}
+                  type="button"
+                  onClick={() => {
+                    dispatch(toLogin());
+                  }}
+                >
+                  Log In
+                </button>
+              </Link>
+
+              <Link to="/auth">
+                <button
+                  className={classes.authButton}
+                  type="button"
+                  onClick={() => {
+                    dispatch(toRegister());
+                  }}
+                >
+                  Sign Up
+                </button>
+              </Link>
+            </div>
+          )}
+          {isAuthenticated && user && (
+            <div>
+              <h4 className={classes.username}>{user.name}</h4>
+              <button
+                type="button"
+                className={classes.logoutButton}
+                onClick={() => {
+                  handleLogout();
+                }}
+              >
+                Log Out
+              </button>
+            </div>
+          )}
+        </section>
         <button className={classes.closeMobileNav} onClick={handleNav}>
           <FaTimes />
         </button>
