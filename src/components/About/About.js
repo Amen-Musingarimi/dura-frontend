@@ -23,10 +23,9 @@ const About = () => {
         <h3 className={classes.ourStoryHeading}>Our Story</h3>
         <div className={classes.ourStoryDescription}>
           <p>
-            ZimFlavors came to life from a shared yearning for the tastes that
-            truly define our Zimbabwean identity. It all started with a simple
-            desire: to find and savor the traditional foods that we grew up
-            cherishing.
+            Dura came to life from a shared yearning for the tastes that truly
+            define our Zimbabwean identity. It all started with a simple desire:
+            to find and savor the traditional foods that we grew up cherishing.
           </p>
           <p>
             It was during this journey, in the midst of the hassle and the
@@ -43,9 +42,9 @@ const About = () => {
                 family gatherings, and swapping recipes passed down through
                 generations, we realized that we were part of a larger community
                 — a community that shared the same fervor for our culinary
-                heritage. This serendipitous connection gave birth to
-                ZimFlavors, a platform dedicated to making the flavors of our
-                culture accessible to all.
+                heritage. This serendipitous connection gave birth to Dura, a
+                platform dedicated to making the flavors of our culture
+                accessible to all.
               </p>
               <p>
                 As we forged ahead, we were fueled by a dual purpose: to ensure
@@ -55,15 +54,15 @@ const About = () => {
                 Zimbabwean cuisine.
               </p>
               <p>
-                ZimFlavors isn't just an app; it's a tribute to the journey
-                we've all embarked upon, a journey that's as much about
-                preserving the past as it is about embracing the future. We
-                invite you to be a part of our collective tale, to savor the
-                tastes that connect us, and to honor the culinary mosaic that is
-                uniquely Zimbabwean.
+                Dura isn't just an app; it's a tribute to the journey we've all
+                embarked upon, a journey that's as much about preserving the
+                past as it is about embracing the future. We invite you to be a
+                part of our collective tale, to savor the tastes that connect
+                us, and to honor the culinary mosaic that is uniquely
+                Zimbabwean.
               </p>
               <p>With gratitude for every step of the journey,</p>
-              <p>The ZimFlavors Team</p>
+              <p>The Dura Team</p>
               <button
                 className={classes.seeMoreButton}
                 onClick={toggleFullStory}

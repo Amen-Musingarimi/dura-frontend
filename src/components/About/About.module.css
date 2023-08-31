@@ -71,3 +71,23 @@
   color: #807c7c;
   font-weight: 500;
 }
+
+@media only screen and (max-width: 1024px) {
+  .aboutImageWrapper,
+  .ourStoryContainer,
+  .servicesDiv {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .aboutUsHeading,
+  .ourStoryHeading,
+  .ourStoryDescription {
+    text-align: center;
+  }
+
+  .servicesDiv {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
