@@ -42,7 +42,7 @@
 }
 
 .smallMessage {
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   font-weight: 600;
 }
 
@@ -53,4 +53,12 @@
 
 .averageText {
   font-weight: 500;
+}
+
+@media only screen and (max-width: 1024px) {
+  .welcomeTextContainer {
+    margin-top: 2rem;
+    gap: 1rem;
+    width: 100%;
+  }
 }

@@ -81,7 +81,7 @@ const Header = (props) => {
           activeClassName={classes.active}
           onClick={handleNav}
         >
-          Shop
+          Products
         </NavLink>
         <NavLink
           to="/about"
