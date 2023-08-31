@@ -5,6 +5,7 @@ import Home from './components/home/Home';
 import Products from './components/Products/Products';
 import ProductDetails from './components/Products/ProductDetails/ProductDetails';
 import Authentication from './components/auth/Authentication';
+import About from './components/About/About';
 import Cart from './components/Cart/Cart';
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route path="/" index element={<Home />} />
           <Route path="/products" index element={<Products />} />
           <Route path="/products/:id" index element={<ProductDetails />} />
+          <Route path="/about" index element={<About />} />
           <Route exact path="/auth" element={<Authentication />} />
         </Routes>
       </main>

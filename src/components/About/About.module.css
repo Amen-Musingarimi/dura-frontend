@@ -1,0 +1,15 @@
+.aboutContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5rem;
+  width: 100%;
+  height: 100%;
+}
+
+.aboutImageContainer {
+  background-image: url('../../assets/somegrains.jpg');
+  height: 20rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

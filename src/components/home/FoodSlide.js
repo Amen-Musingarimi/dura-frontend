@@ -24,7 +24,8 @@ const FoodSlide = ({ foods }) => {
           />
           <div className={classes.fooDetails}>
             <h2 className={classes.foodName}>
-              {foods[currentFoodIndex]?.name}
+              {foods[currentFoodIndex]?.name} |{' '}
+              {foods[currentFoodIndex]?.englishName}
             </h2>
             <p className={classes.foodDescription}>
               {foods[currentFoodIndex]?.description}
@@ -37,7 +38,9 @@ const FoodSlide = ({ foods }) => {
         <div className={classes.callToActionSticker}>
           <div className={classes.whiteBorder}>
             <span className={classes.from}>From</span>
-            <span className={classes.lowestPrice}>$9.00</span>
+            <span className={classes.lowestPrice}>
+              ${foods[currentFoodIndex]?.price}
+            </span>
             <p>Shop Now</p>
           </div>
         </div>
