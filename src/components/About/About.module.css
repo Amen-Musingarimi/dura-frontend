@@ -22,7 +22,8 @@
 }
 
 .aboutImageWrapper,
-.ourStoryContainer {
+.ourStoryContainer,
+.servicesDiv {
   width: 80%;
 }
 
@@ -35,7 +36,7 @@
   color: #141c42;
   font-weight: 400;
   font-size: 1rem;
-  padding: 2rem 0;
+  padding: 3rem 0;
 }
 
 .ourStoryHeading {
@@ -44,11 +45,29 @@
 }
 
 .seeMoreButton {
-  background-color: #fff;
+  background-color: transparent;
   border: none;
   text-decoration: underline;
   padding: 0;
   color: #233694;
   font-size: 0.9rem;
   cursor: pointer;
+}
+
+.servicesDiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2rem 0;
+}
+
+.serviceHeading {
+  font-size: 1.2rem;
+  color: #233694;
+}
+
+.serviceDescription {
+  font-size: 1rem;
+  color: #807c7c;
+  font-weight: 500;
 }

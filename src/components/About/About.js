@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import classes from './About.module.css';
+import truck from '../../assets/services1.svg';
+import securePayment from '../../assets/services2.svg';
+import moneyBack from '../../assets/services3.svg';
+import avaibility from '../../assets/services4.svg';
 
 const About = () => {
   const [showFullStory, setShowFullStory] = useState(false);
@@ -77,6 +81,30 @@ const About = () => {
               </button>
             </>
           )}
+        </div>
+      </div>
+      <div className={classes.servicesDiv}>
+        <div className={classes.serviceContainer}>
+          <img src={truck} alt="TruckIcon" />
+          <h4 className={classes.serviceHeading}>Fast & Free Delivery</h4>
+          <p className={classes.serviceDescription}>Free CBD delivery</p>
+        </div>
+        <div className={classes.freeDelivery}>
+          <img src={securePayment} alt="PaymentIcon" />
+          <h4 className={classes.serviceHeading}>Secure Payment</h4>
+          <p className={classes.serviceDescription}>Pay on delivery</p>
+        </div>
+        <div className={classes.freeDelivery}>
+          <img src={moneyBack} alt="MoneyIcon" />
+          <h4 className={classes.serviceHeading}>Money Back Guarantee</h4>
+          <p className={classes.serviceDescription}>Commitment fee returned </p>
+        </div>
+        <div className={classes.freeDelivery}>
+          <img src={avaibility} alt="AvailableIcon" />
+          <h4 className={classes.serviceHeading}>Online Support</h4>
+          <p className={classes.serviceDescription}>
+            Availbe 24/7 to assist you
+          </p>
         </div>
       </div>
     </div>
