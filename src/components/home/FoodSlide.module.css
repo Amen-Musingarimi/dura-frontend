@@ -9,8 +9,7 @@
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 2rem;
-  background-color: #ffffffe3;
-  opacity: 0.7;
+  background-color: #fff;
   padding: 1rem 2rem;
   height: 100%;
   width: 100%;
@@ -25,10 +24,23 @@
   gap: 3rem;
 }
 
+.headerContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+}
+
 .foodName {
   font-size: 1.5rem;
   font-weight: 700;
   margin: 0;
+}
+
+.foodImage {
+  height: 8rem;
+  width: 8rem;
+  border-radius: 50%;
 }
 
 .foodDescription {

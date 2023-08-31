@@ -16,14 +16,23 @@ const FoodSlide = ({ foods }) => {
   return (
     <div>
       <div className={classes.foodSlide}>
-        <div className={classes.fooDetails}>
-          <h2 className={classes.foodName}>{foods[currentFoodIndex]?.name}</h2>
-          <p className={classes.foodDescription}>
-            {foods[currentFoodIndex]?.description}
-          </p>
-          <Link to="/products" className={classes.navigateLink}>
-            DISCOVER MORE
-          </Link>
+        <div className={classes.headerContainer}>
+          <img
+            src={foods[currentFoodIndex]?.image}
+            alt="FoodImage"
+            className={classes.foodImage}
+          />
+          <div className={classes.fooDetails}>
+            <h2 className={classes.foodName}>
+              {foods[currentFoodIndex]?.name}
+            </h2>
+            <p className={classes.foodDescription}>
+              {foods[currentFoodIndex]?.description}
+            </p>
+            <Link to="/products" className={classes.navigateLink}>
+              DISCOVER MORE
+            </Link>
+          </div>
         </div>
         <div className={classes.callToActionSticker}>
           <div className={classes.whiteBorder}>
