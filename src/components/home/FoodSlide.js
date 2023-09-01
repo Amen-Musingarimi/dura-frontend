@@ -8,7 +8,7 @@ const FoodSlide = ({ foods }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentFoodIndex((prevIndex) => (prevIndex + 1) % foods.length);
-    }, 4000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [foods]);
