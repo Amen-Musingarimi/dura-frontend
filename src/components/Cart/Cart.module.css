@@ -6,6 +6,15 @@
   overflow: auto;
 }
 
+.cartHeadings {
+  font-size: 1.3rem;
+  color: #141c42;
+}
+
+.totalAmount {
+  color: #8a2b06;
+}
+
 .total {
   display: flex;
   justify-content: space-between;

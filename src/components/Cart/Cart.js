@@ -50,8 +50,8 @@ const Cart = (props) => {
         ))}
       </ul>
       <div className={classes.total}>
-        <span>Total Amount</span>
-        <span>{totalAmount}</span>
+        <span className={classes.cartHeadings}>Total Amount</span>
+        <span className={classes.totalAmount}>${totalAmount}</span>
       </div>
       <div className={classes.actions}>
         <button className={classes['button--alt']} onClick={clearCartHandler}>
