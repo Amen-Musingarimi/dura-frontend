@@ -46,6 +46,8 @@
   background-color: #16297e;
   border: none;
   color: #eff1fd;
+  font-family: inherit;
+  font-weight: 500;
   margin-right: 0.5rem; /*remember to delete this */
 }
 
@@ -110,7 +112,6 @@
   .logo {
     position: absolute;
     left: 2rem;
-    top: 1.3rem;
   }
 
   .closeMobileNav,

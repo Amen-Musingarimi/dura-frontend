@@ -7,7 +7,7 @@ import HeaderCartButton from './HeaderCartButton';
 import { getLocalStorage } from '../helpers/localStorage';
 import {
   logOutUser,
-  toLogin,
+  // toLogin,
   toRegister,
 } from '../../redux/authenticationSlice';
 import classes from './Header.module.css';
@@ -95,7 +95,7 @@ const Header = (props) => {
           <section className={classes.navAuthWrapper}>
             {!isAuthenticated && (
               <div>
-                <Link to="/auth">
+                {/* <Link to="/auth">
                   <button
                     className={classes.authButton}
                     type="button"
@@ -105,7 +105,7 @@ const Header = (props) => {
                   >
                     Log In
                   </button>
-                </Link>
+                </Link> */}
 
                 <Link to="/auth">
                   <button
