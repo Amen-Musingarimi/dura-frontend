@@ -84,6 +84,7 @@ const ContactForm = ({ onClose }) => {
             <textarea
               onChange={(e) => setMessage(e.target.value)}
               value={message}
+              placeholder="Write your message here"
               name="message"
               className={classes.messageInput}
               required

@@ -100,6 +100,7 @@ const Header = (props) => {
                     className={classes.authButton}
                     type="button"
                     onClick={() => {
+                      handleNav();
                       dispatch(toLogin());
                     }}
                   >
@@ -112,6 +113,7 @@ const Header = (props) => {
                     className={classes.authButton}
                     type="button"
                     onClick={() => {
+                      handleNav();
                       dispatch(toRegister());
                     }}
                   >
