@@ -1,31 +1,48 @@
 .button {
+  position: fixed;
+  right: 0.5rem;
   cursor: pointer;
   font: inherit;
   border: none;
-  background-color: #eff1fd;
+  background-color: #16297e;
+  opacity: 0.8;
   color: white;
+  padding: 0.5rem 0.8rem;
   display: flex;
-  justify-content: space-around;
-  align-items: baseline;
-  border-radius: 25px;
-  margin-left: 4rem;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: bold;
+  border-bottom-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
 
 .button:hover,
 .button:active {
-  color: #11183d;
+  background-color: #233174;
+}
+
+.cartIconContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.cartLabel {
+  font-size: 0.85rem;
+  font-weight: 500;
 }
 
 .icon {
-  width: 1.5rem;
-  height: 1.5rem;
-  color: #0e2181;
+  width: 1.35rem;
+  height: 1.35rem;
 }
 
 .badge {
-  color: #a13408;
+  align-self: baseline !important;
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  color: #da480e;
 }
 
 .bump {
@@ -47,16 +64,5 @@
   }
   100% {
     transform: scale(1);
-  }
-}
-
-@media only screen and (max-width: 1024px) {
-  .button {
-    padding: 0.5rem 1rem;
-    font-weight: 600;
-  }
-
-  .badge {
-    font-weight: 600;
   }
 }

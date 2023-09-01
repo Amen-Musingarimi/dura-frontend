@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
-
-.header {
+.headerWrapper {
   position: fixed;
   top: 0;
   left: 0;
@@ -8,12 +7,17 @@
   height: 5rem;
   background-color: #eff1fd;
   color: #141c42;
+
+  z-index: 10;
+}
+
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 10%;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-  z-index: 10;
+  width: 100%;
+  padding: 0 10%;
 }
 
 .header nav {

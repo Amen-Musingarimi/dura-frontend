@@ -60,93 +60,95 @@ const Header = (props) => {
   };
 
   return (
-    <header className={classes.header}>
-      <h3 className={classes.logo}>
-        D<span className={classes.logoStling}>U</span>R
-        <span className={classes.logoStling}>A</span>
-      </h3>
-      <nav style={isMobile ? navStyle : {}} className={classes.nav}>
-        <NavLink
-          to="/"
-          exact={true}
-          activeClassName={classes.active}
-          onClick={handleNav}
-        >
-          Home
-        </NavLink>
+    <div className={classes.headerWrapper}>
+      <header className={classes.header}>
+        <h3 className={classes.logo}>
+          D<span className={classes.logoStling}>U</span>R
+          <span className={classes.logoStling}>A</span>
+        </h3>
+        <nav style={isMobile ? navStyle : {}} className={classes.nav}>
+          <NavLink
+            to="/"
+            exact={true}
+            activeClassName={classes.active}
+            onClick={handleNav}
+          >
+            Home
+          </NavLink>
 
-        <NavLink
-          to="/products"
-          exact={true}
-          activeClassName={classes.active}
-          onClick={handleNav}
-        >
-          Products
-        </NavLink>
-        <NavLink
-          to="/about"
-          exact={true}
-          activeClassName={classes.active}
-          onClick={handleNav}
-        >
-          About
-        </NavLink>
-        <section className={classes.navAuthWrapper}>
-          {!isAuthenticated && (
-            <div>
-              <Link to="/auth">
+          <NavLink
+            to="/products"
+            exact={true}
+            activeClassName={classes.active}
+            onClick={handleNav}
+          >
+            Products
+          </NavLink>
+          <NavLink
+            to="/about"
+            exact={true}
+            activeClassName={classes.active}
+            onClick={handleNav}
+          >
+            About
+          </NavLink>
+          <section className={classes.navAuthWrapper}>
+            {!isAuthenticated && (
+              <div>
+                <Link to="/auth">
+                  <button
+                    className={classes.authButton}
+                    type="button"
+                    onClick={() => {
+                      dispatch(toLogin());
+                    }}
+                  >
+                    Log In
+                  </button>
+                </Link>
+
+                <Link to="/auth">
+                  <button
+                    className={classes.authButton}
+                    type="button"
+                    onClick={() => {
+                      dispatch(toRegister());
+                    }}
+                  >
+                    Sign Up
+                  </button>
+                </Link>
+              </div>
+            )}
+            {isAuthenticated && user && (
+              <div>
+                <h4 className={classes.username}>{user.name}</h4>
                 <button
-                  className={classes.authButton}
                   type="button"
+                  className={classes.logoutButton}
                   onClick={() => {
-                    dispatch(toLogin());
+                    handleLogout();
                   }}
                 >
-                  Log In
+                  Log Out
                 </button>
-              </Link>
-
-              <Link to="/auth">
-                <button
-                  className={classes.authButton}
-                  type="button"
-                  onClick={() => {
-                    dispatch(toRegister());
-                  }}
-                >
-                  Sign Up
-                </button>
-              </Link>
-            </div>
-          )}
-          {isAuthenticated && user && (
-            <div>
-              <h4 className={classes.username}>{user.name}</h4>
-              <button
-                type="button"
-                className={classes.logoutButton}
-                onClick={() => {
-                  handleLogout();
-                }}
-              >
-                Log Out
-              </button>
-            </div>
-          )}
-        </section>
-        <button className={classes.closeMobileNav} onClick={handleNav}>
-          <FaTimes />
+              </div>
+            )}
+          </section>
+          <button className={classes.closeMobileNav} onClick={handleNav}>
+            <FaTimes />
+          </button>
+        </nav>
+        <button className={classes.openMobileNav} onClick={handleNav}>
+          <FaBars />
         </button>
-      </nav>
+      </header>
       <HeaderCartButton
         onClick={() => {
           props.onShowCart();
         }}
       />
-      <button className={classes.openMobileNav} onClick={handleNav}>
-        <FaBars />
-      </button>
-    </header>
+    </div>
   );
 };
 
