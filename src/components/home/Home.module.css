@@ -1,58 +1,56 @@
-.homeContainer {
+.homeContainer,
+.welcomeTextContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
+  color: #19255f;
+}
+
+.homeContainer {
   height: 100vh;
-  background-image: url('../../assets/Types-of-Grains.webp');
+  background-image: url('../../assets/cereals-563796_1280.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   margin-top: 5rem;
-  color: #19255f;
-}
-
-.blurBackground {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  background-color: #ffffffe7;
-  opacity: 0.9;
-  padding: 1rem;
-  gap: 3rem;
+  padding: 2%;
 }
 
 .welcomeTextContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  text-align: center;
-  margin-top: 4rem;
-  gap: 1rem;
   width: 60%;
+  gap: 2rem;
 }
 
 .welcomeTextContainer p {
   margin: 0;
+  text-align: center;
 }
 
 .smallMessage {
   font-size: 1.2rem;
   font-weight: 600;
+  line-height: 1.5rem;
 }
 
 .welcomeTextContainer h1 {
   font-size: 2rem;
+  text-align: center;
   margin: 0;
 }
 
 .averageText {
-  font-weight: 500;
+  font-weight: 600;
+  line-height: 1.5rem;
+}
+
+.learnMoreLink {
+  text-decoration: none;
+  color: #fff;
+  background-color: #19255f;
+  padding: 0.5rem 1.4rem;
+  border-radius: 4px;
 }
 
 @media only screen and (max-width: 1024px) {

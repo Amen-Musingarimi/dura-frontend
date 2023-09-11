@@ -70,27 +70,30 @@ const Header = (props) => {
           <NavLink
             to="/"
             exact={true}
+            className={classes.navLinks}
             activeClassName={classes.active}
             onClick={handleNav}
           >
-            Home
+            HOME
           </NavLink>
 
           <NavLink
             to="/products"
             exact={true}
+            className={classes.navLinks}
             activeClassName={classes.active}
             onClick={handleNav}
           >
-            Products
+            PRODUCTS
           </NavLink>
           <NavLink
             to="/about"
             exact={true}
+            className={classes.navLinks}
             activeClassName={classes.active}
             onClick={handleNav}
           >
-            About
+            ABOUT
           </NavLink>
           <section className={classes.navAuthWrapper}>
             {!isAuthenticated && (
@@ -104,7 +107,7 @@ const Header = (props) => {
                       dispatch(toLogin());
                     }}
                   >
-                    Log In
+                    LOG IN
                   </button>
                 </Link> */}
 
@@ -117,7 +120,7 @@ const Header = (props) => {
                       dispatch(toRegister());
                     }}
                   >
-                    Sign Up
+                    SIGN UP
                   </button>
                 </Link>
               </div>
@@ -132,7 +135,7 @@ const Header = (props) => {
                     handleLogout();
                   }}
                 >
-                  Log Out
+                  LOG OUT
                 </button>
               </div>
             )}
