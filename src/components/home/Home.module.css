@@ -2,8 +2,8 @@
 .welcomeTextContainer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   width: 100%;
   color: #19255f;
 }
@@ -15,17 +15,16 @@
   background-position: center;
   background-repeat: no-repeat;
   margin-top: 5rem;
-  padding: 2%;
 }
 
 .welcomeTextContainer {
-  width: 60%;
-  gap: 2rem;
+  width: 50%;
+  gap: 3rem;
+  padding: 10% 2%;
 }
 
 .welcomeTextContainer p {
   margin: 0;
-  text-align: center;
 }
 
 .smallMessage {
@@ -36,7 +35,6 @@
 
 .welcomeTextContainer h1 {
   font-size: 2rem;
-  text-align: center;
   margin: 0;
 }
 
@@ -53,10 +51,16 @@
   border-radius: 4px;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 768px) {
   .welcomeTextContainer {
-    margin-top: 2rem;
-    gap: 1rem;
+    justify-content: center;
+    align-items: center;
     width: 100%;
+  }
+
+  .welcomeTextContainer h1,
+  .smallMessage,
+  .averageText {
+    text-align: center;
   }
 }
