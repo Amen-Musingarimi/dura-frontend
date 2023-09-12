@@ -1,0 +1,15 @@
+.homeCatalogueCont {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  gap: 2rem;
+  padding: 0 2%;
+}
+
+.sectionHeading {
+  font-size: 1.8rem;
+  text-align: center;
+  color: #19255f;
+}
