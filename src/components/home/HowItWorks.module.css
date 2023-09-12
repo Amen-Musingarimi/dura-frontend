@@ -57,3 +57,24 @@
   font-size: 0.9rem;
   line-height: 1.5rem;
 }
+
+@media only screen and (max-width: 1024px) {
+  .instructionCont {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .sectionContainer {
+    gap: 0;
+  }
+
+  .instructionCont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+}
