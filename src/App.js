@@ -7,6 +7,7 @@ import ProductDetails from './components/Products/ProductDetails/ProductDetails'
 import Authentication from './components/auth/Authentication';
 import About from './components/About/About';
 import Cart from './components/Cart/Cart';
+import Footer from './components/Footer/Footer';
 import ContactButton from './components/contact/ContactButton';
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
         </Routes>
       </main>
       <ContactButton />
+      <Footer />
     </Fragment>
   );
 }
