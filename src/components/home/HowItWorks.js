@@ -1,6 +1,7 @@
 import React from 'react';
 import { HowItWorksArr } from '../helpers/Data';
 import classes from './HowItWorks.module.css';
+import { Link } from 'react-router-dom';
 
 const HowItWorks = () => {
   return (
@@ -19,6 +20,9 @@ const HowItWorks = () => {
           </div>
         ))}
       </div>
+      <Link to="/auth" className={classes.signInRedirectBtn}>
+        Sign In Now
+      </Link>
     </div>
   );
 };
