@@ -1,66 +1,8 @@
-.homeContainer,
-.welcomeTextContainer {
+.homeContainer {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: flex-start;
-  width: 100%;
-  color: #19255f;
-}
-
-.homeContainer {
-  height: 100vh;
-  background-image: url('../../assets/cereals-563796_1280.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  justify-content: flex-start;
   margin-top: 5rem;
-}
-
-.welcomeTextContainer {
-  width: 50%;
-  gap: 3rem;
-  padding: 10% 2%;
-}
-
-.welcomeTextContainer p {
-  margin: 0;
-}
-
-.smallMessage {
-  font-size: 1.2rem;
-  font-weight: 600;
-  line-height: 1.5rem;
-}
-
-.welcomeTextContainer h1 {
-  font-size: 2rem;
-  margin: 0;
-}
-
-.averageText {
-  font-weight: 600;
-  line-height: 1.5rem;
-}
-
-.learnMoreLink {
-  text-decoration: none;
-  color: #fff;
-  background-color: #19255f;
-  padding: 0.5rem 1.4rem;
-  border-radius: 4px;
-}
-
-@media only screen and (max-width: 768px) {
-  .welcomeTextContainer {
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
-
-  .welcomeTextContainer h1,
-  .smallMessage,
-  .averageText {
-    text-align: center;
-  }
+  height: 100vh;
 }
