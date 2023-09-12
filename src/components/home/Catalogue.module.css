@@ -4,12 +4,13 @@
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-  gap: 2rem;
-  padding: 0 2%;
+  gap: 3rem;
 }
 
 .sectionHeading {
   font-size: 1.8rem;
   text-align: center;
   color: #19255f;
+  margin: 0;
+  padding: 0;
 }

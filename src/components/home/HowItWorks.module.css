@@ -3,8 +3,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding: 3% 2%;
-  gap: 2rem;
+  gap: 3rem;
   width: 100%;
   color: #19255f;
 }
@@ -12,6 +11,8 @@
 .sectionHeading {
   font-size: 1.8rem;
   text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
 .instructionCont {
@@ -83,7 +84,7 @@
 
 @media only screen and (max-width: 768px) {
   .sectionContainer {
-    gap: 0;
+    gap: 2rem;
   }
 
   .instructionCont {

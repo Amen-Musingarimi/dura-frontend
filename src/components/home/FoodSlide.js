@@ -49,8 +49,10 @@ const FoodSlide = () => {
           />
           <div className={classes.nameCont}>
             <h3 className={classes.clientName}>{currentCard.name}</h3>
-            <span>|</span>
-            <h3 className={classes.clientName}>{currentCard.englishName}</h3>
+            <span className={classes.hide}>|</span>
+            <h3 className={`${classes.clientName} ${classes.hide}`}>
+              {currentCard.englishName}
+            </h3>
           </div>
         </div>
         <div className={classes.textWrapper}>
