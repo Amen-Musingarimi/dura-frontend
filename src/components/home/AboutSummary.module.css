@@ -35,6 +35,8 @@
 }
 
 .aboutDescription {
+  padding: 0;
+  margin: 0;
   line-height: 1.5rem;
   font-size: 1rem;
   font-weight: 500;
@@ -67,4 +69,36 @@
   font-size: 1rem;
   border: 1px solid #da480e;
   background-color: #19255f;
+}
+
+@media only screen and (max-width: 1024px) {
+  .aboutSummaryCont {
+    gap: 3rem;
+    width: 100%;
+    padding: 1% 2%;
+    height: 30rem;
+  }
+
+  .textContainer {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .aboutSummaryCont {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+    height: auto;
+  }
+
+  .imagesSlideCont {
+    width: 100%;
+  }
+
+  .textContainer {
+    width: 100%;
+  }
 }

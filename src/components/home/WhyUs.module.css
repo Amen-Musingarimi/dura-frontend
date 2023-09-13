@@ -49,3 +49,25 @@
   font-weight: 500;
   color: #636262;
 }
+
+@media only screen and (max-width: 1024px) {
+  .sectionContainer {
+    width: 100%;
+    padding: 5% 2%;
+  }
+
+  .reasonCard {
+    width: 30%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .sectionContainer {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .reasonCard {
+    width: 100%;
+  }
+}
