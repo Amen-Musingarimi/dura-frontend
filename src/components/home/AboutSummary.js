@@ -31,20 +31,17 @@ const AboutSummary = () => {
       </div>
       <div className={classes.textContainer}>
         <h3 className={classes.sectionHeading}>About Us</h3>
-        <div className={classes.aboutDescriptioncont}>
-          <p className={classes.aboutDescription}>
-            Dura is your online marketplace for authentic Zimbabwean traditional
-            foods. Designed to cater to every traditional food lover, we are a
-            hub of all your traditional foods.
-          </p>
-          <p className={classes.aboutDescription}>
-            To make your culinary journey easy, we ask for a 30% commitment fee
-            when you place your order. This allows us to deliver the essence of
-            Zimbabwean culture right to your doorstep within Harare. Enjoy the
-            convenience and flavors that connect you with your heritage.
-          </p>
-        </div>
-
+        <p className={classes.aboutDescription}>
+          Dura is your online marketplace for authentic Zimbabwean traditional
+          foods. Designed to cater to every traditional food lover, we are a hub
+          of all your traditional foods.
+        </p>
+        <p className={classes.aboutDescription}>
+          To make your culinary journey easy, we ask for a 30% commitment fee
+          when you place your order. This allows us to deliver the essence of
+          Zimbabwean culture right to your doorstep within Harare. Enjoy the
+          convenience and flavors that connect you with your heritage.
+        </p>
         <Link to="/about" className={classes.aboutLink}>
           Learn More
         </Link>

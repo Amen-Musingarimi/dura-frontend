@@ -26,7 +26,7 @@
 .textContainer {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-around;
   align-items: flex-start;
   gap: 2rem;
   width: 40%;
@@ -45,13 +45,17 @@
   font-size: 1.8rem;
   margin: 0;
   padding: 0;
+  border: 1px solid #da480e;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  box-shadow: 8px 8px 0px 0px rgb(218, 72, 14, 1);
 }
 
 .aboutLink {
   text-decoration: none;
   color: #fff;
   background-color: #da480e;
-  padding: 0.5rem 1.4rem;
+  padding: 0.7rem 1.4rem;
   border-radius: 4px;
   font-size: 0.9rem;
   cursor: pointer;

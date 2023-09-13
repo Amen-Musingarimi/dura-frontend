@@ -13,6 +13,10 @@
   text-align: center;
   margin: 0;
   padding: 0;
+  border: 1px solid #da480e;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  box-shadow: 8px 8px 0px 0px rgb(218, 72, 14, 1);
 }
 
 .instructionCont {
