@@ -7,7 +7,7 @@ const HomeHeader = () => {
     <div className={classes.homeContainer}>
       <div className={classes.welcomeTextContainer}>
         <p className={classes.smallMessage}>Welcome to, </p>
-        <h1>Dura | The Zim Flavors Hub.</h1>
+        <h1>Dura | The Zim Flavors Hub</h1>
         <p className={classes.averageText}>
           Discover and savor the rich essence of Zimbabwean culture through our
           premium selection of raw, traditional foods. Experience the tastes

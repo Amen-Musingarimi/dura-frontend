@@ -6,7 +6,7 @@ import classes from './Footer.module.css';
 const Footer = () => {
   return (
     <footer className={classes.footer}>
-      <h2 className={classes.sectionHeading}>Dura</h2>
+      <h2 className={classes.sectionHeading}>Dura | The Zim Flavors Hub</h2>
       <p className={classes.sectionDescription}>
         Unlock the Rich Tastes of Zimbabwean Tradition.
       </p>
@@ -58,7 +58,7 @@ const Footer = () => {
               href="https://www.facebook.com/profile.php?id=100008430154593"
               target="_blank"
               rel="noreferrer"
-              className={classes.street}
+              className={classes.icon}
             >
               <FaFacebook />
             </a>
@@ -66,7 +66,7 @@ const Footer = () => {
               href="https://twitter.com/tunchi_a"
               target="_blank"
               rel="noreferrer"
-              className={classes.street}
+              className={classes.icon}
             >
               <FaTwitter />
             </a>
@@ -74,7 +74,7 @@ const Footer = () => {
               href="#home"
               target="_blank"
               rel="noreferrer"
-              className={classes.street}
+              className={classes.icon}
             >
               <FaYoutube />
             </a>
@@ -82,12 +82,25 @@ const Footer = () => {
               href="https://www.linkedin.com/in/atmusingarimi/"
               target="_blank"
               rel="noreferrer"
-              className={classes.street}
+              className={classes.icon}
             >
               <FaLinkedin />
             </a>
           </div>
         </div>
+      </div>
+      <div className={classes.copyrightsDiv}>
+        <p className={classes.copyrightsText}>
+          Copyright © Dura by{' '}
+          <a
+            href="https://www.linkedin.com/in/atmusingarimi/"
+            target="_blank"
+            rel="noreferrer"
+            className={classes.linkedInLink}
+          >
+            Amen Musingarimi
+          </a>
+        </p>
       </div>
     </footer>
   );

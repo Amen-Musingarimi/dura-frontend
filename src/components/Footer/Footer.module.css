@@ -12,6 +12,7 @@
 
 .sectionHeading {
   font-size: 1.8rem;
+  font-weight: 600;
   text-align: center;
   margin: 0;
   padding: 0;
@@ -63,7 +64,7 @@
 }
 
 .street {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 500;
 }
 
@@ -73,7 +74,7 @@
 }
 
 .physicalAddress a:hover {
-  color: gray;
+  color: #da480e;
 }
 
 .physicalAddress h3,
@@ -95,4 +96,33 @@
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
+}
+
+.icon {
+  font-size: 1.5rem;
+}
+
+.copyrightsDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 1rem;
+  width: 100%;
+  border-top: 1px solid #da480e;
+}
+
+.copyrightsText,
+.linkedInLink {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.linkedInLink {
+  text-decoration: none;
+  color: #fff;
+}
+
+.linkedInLink:hover {
+  color: #da480e;
 }
