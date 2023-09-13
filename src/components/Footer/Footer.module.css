@@ -22,6 +22,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  gap: 4rem;
   width: 100%;
 }
 
@@ -125,4 +126,16 @@
 
 .linkedInLink:hover {
   color: #da480e;
+}
+
+@media only screen and (max-width: 768px) {
+  .sectionHeading {
+    text-align: start;
+  }
+
+  .detailsContainer {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 2rem;
+  }
 }
