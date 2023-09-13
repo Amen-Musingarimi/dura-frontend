@@ -6,7 +6,7 @@ const HomeHeader = () => {
   return (
     <div className={classes.homeContainer}>
       <div className={classes.welcomeTextContainer}>
-        <p className={classes.smallMessage}>Welcome to, </p>
+        <h3 className={classes.smallMessage}>Welcome to, </h3>
         <h1>Dura | The Zim Flavors Hub</h1>
         <p className={classes.averageText}>
           Discover and savor the rich essence of Zimbabwean culture through our
