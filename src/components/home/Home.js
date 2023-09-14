@@ -4,6 +4,7 @@ import HowItWorks from './HowItWorks';
 import Catalogue from './Catalogue';
 import AboutSummary from './AboutSummary';
 import WhyUs from './WhyUs';
+import Testimonials from './Testimonials';
 import classes from './Home.module.css';
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
       <WhyUs />
       <HowItWorks />
       <Catalogue />
+      <Testimonials />
     </div>
   );
 };
