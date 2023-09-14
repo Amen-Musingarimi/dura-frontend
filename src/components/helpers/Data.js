@@ -126,3 +126,42 @@ export const TestimonialsDataArr = [
       'ZimFlavors has reconnected me with the flavors of my childhood. The authenticity of their foods is remarkable. A wonderful service for Zimbabwean cuisine enthusiasts!',
   },
 ];
+
+export const FAQsDataArr = [
+  {
+    id: 1,
+    question: 'How long does it take to deliver my order?',
+    answer:
+      'Delivery times may vary, but we aim to deliver within [X] business days. You will receive a delivery estimate during the checkout process.',
+  },
+  {
+    id: 2,
+    question: 'Why do I need to pay 30% before delivery?',
+    answer:
+      'We require a 30% commitment fee to ensure that your order is prioritized and prepared for delivery. This helps us manage our resources efficiently and provide you with the best service possible.',
+  },
+  {
+    id: 3,
+    question: 'What areas do you deliver to?',
+    answer:
+      'Currently, we offer delivery services within Harare. We are working to expand our delivery areas to serve more regions in the future.',
+  },
+  {
+    id: 4,
+    question: 'Can I track my order?',
+    answer:
+      'Yes, we provide order tracking services. You will receive a tracking number once your order is dispatched, allowing you to monitor its progress until it reaches your doorstep.',
+  },
+  {
+    id: 5,
+    question: 'Do you offer international shipping?',
+    answer:
+      'Currently, we only offer delivery within Zimbabwe. We do not provide international shipping services at this time.',
+  },
+  {
+    id: 6,
+    question: 'What if I receive damaged or incorrect items?',
+    answer:
+      'We take quality seriously. If you receive damaged or incorrect items, please contact our customer support team within [X] days of delivery, and we will promptly resolve the issue.',
+  },
+];
