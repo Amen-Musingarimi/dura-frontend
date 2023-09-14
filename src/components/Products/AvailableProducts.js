@@ -21,6 +21,7 @@ const AvailableProducts = () => {
       description={prod.description}
       image={prod.image}
       price={prod.price}
+      unit={prod.unit}
     />
   ));
 

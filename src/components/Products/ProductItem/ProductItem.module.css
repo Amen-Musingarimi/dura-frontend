@@ -1,6 +1,7 @@
 .mealWrapper {
   background-color: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  border: 1px solid #d3d3d3;
+  box-shadow: 4px 4px 0px 0px rgba(34, 32, 83, 1);
   border-radius: 10px;
 }
 
@@ -24,7 +25,7 @@
 
 .productImage {
   height: 15rem;
-  width: 15rem;
+  width: 100%;
   border-radius: 8px;
 }
 
@@ -38,7 +39,14 @@
 .price {
   font-weight: 700;
   font-size: 1.2rem;
-  color: #0f1531;
+  background-color: #da480e;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #141c42;
+  padding: 1rem 2rem;
+  border-radius: 20px;
+  box-shadow: 4px 4px 0px 0px rgba(34, 32, 83, 1);
 }
 
 @media only screen and (max-width: 1024px) {

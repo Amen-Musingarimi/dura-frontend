@@ -14,9 +14,10 @@ const ProductItem = (props) => {
           <h3>{props.name}</h3>
           <span> | </span>
           <h3>{props.englishName}</h3>
-          <span> | </span>
-          <p className={classes.price}>${props.price}</p>
         </div>
+        <p className={classes.price}>
+          ${props.price} / <span>{props.unit}</span>
+        </p>
       </Link>
     </li>
   );
