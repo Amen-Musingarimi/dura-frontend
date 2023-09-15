@@ -165,3 +165,24 @@ export const FAQsDataArr = [
       'We take quality seriously. If you receive damaged or incorrect items, please contact our customer support team within [X] days of delivery, and we will promptly resolve the issue.',
   },
 ];
+
+export const OurStoryDataArr = [
+  {
+    id: 1,
+    image: image2,
+    description:
+      'Dura came to life from a shared yearning for the tastes that truly define our Zimbabwean identity. It all started with a simple desire: to find and savor the traditional foods that we grew up cherishing. It was during this journey, in the midst of the hassle and the heartache of longing for a taste of home, that we encountered something truly special. Along the way, we met fellow Zimbabwean food enthusiasts who were on the same journey of seeking authenticity, tradition, and connection through the foods we hold dear.',
+  },
+  {
+    id: 2,
+    image: image1,
+    description:
+      'Through shared stories of wandering markets, reminiscing about family gatherings, and swapping recipes passed down through generations, we realized that we were part of a larger community — a community that shared the same fervor for our culinary heritage. This serendipitous connection gave birth to Dura, a platform dedicated to making the flavors of our culture accessible to all. As we forged ahead, we were fueled by a dual purpose: to ensure that the traditional foods we remember remain accessible, and to create a space where our fellow food lovers can come together to celebrate, savor, and share in the vibrant tapestry of Zimbabwean cuisine.',
+  },
+  {
+    id: 3,
+    image: image3,
+    description:
+      "Dura isn't just an app; it's a tribute to the journey we've all embarked upon, a journey that's as much about preserving the past as it is about embracing the future. We invite you to be a part of our collective tale, to savor the tastes that connect us, and to honor the culinary mosaic that is uniquely Zimbabwean.",
+  },
+];

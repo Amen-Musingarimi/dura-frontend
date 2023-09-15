@@ -1,93 +1,21 @@
-.aboutContainer,
-.aboutImageContainer {
+.aboutContainer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  margin-top: 5rem;
+  margin-bottom: 4rem;
+  gap: 4rem;
+  width: 100%;
 }
 
-.aboutContainer {
-  margin-top: 5rem;
+.pageHeader {
+  width: 100%;
+  height: 20rem;
+}
+
+.grainsImage {
   width: 100%;
   height: 100%;
-}
-
-.aboutImageContainer {
-  background-image: url('../../assets/about-wall.jpg');
-  height: 15rem;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 100%;
-}
-
-.aboutImageWrapper,
-.ourStoryContainer,
-.servicesDiv {
-  width: 80%;
-}
-
-.aboutUsHeading {
-  font-size: 2rem;
-  color: #fff;
-}
-
-.ourStoryContainer {
-  color: #141c42;
-  font-weight: 400;
-  font-size: 1rem;
-  padding: 3rem 0;
-}
-
-.ourStoryHeading {
-  font-size: 1.5rem;
-  font-size: 700;
-}
-
-.seeMoreButton {
-  background-color: transparent;
-  border: none;
-  text-decoration: underline;
-  padding: 0;
-  color: #233694;
-  font-size: 0.9rem;
-  cursor: pointer;
-}
-
-.servicesDiv {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 2rem 0;
-}
-
-.serviceHeading {
-  font-size: 1.1rem;
-  color: #233694;
-}
-
-.serviceDescription {
-  font-size: 1rem;
-  color: #807c7c;
-  font-weight: 500;
-}
-
-@media only screen and (max-width: 1024px) {
-  .aboutImageWrapper,
-  .ourStoryContainer,
-  .servicesDiv {
-    width: 100%;
-    padding: 1rem;
-  }
-
-  .aboutUsHeading,
-  .ourStoryHeading,
-  .ourStoryDescription {
-    text-align: center;
-  }
-
-  .servicesDiv {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  }
+  object-fit: cover;
 }
