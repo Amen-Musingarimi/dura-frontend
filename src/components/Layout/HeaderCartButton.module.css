@@ -1,12 +1,11 @@
 .button {
   position: fixed;
-  right: 0.5rem;
+  right: 1rem;
   cursor: pointer;
   font: inherit;
   border: none;
-  background-color: #16297e;
-  opacity: 0.8;
-  color: white;
+  background-color: #da480e;
+  color: #fff;
   padding: 0.5rem 0.8rem;
   display: flex;
   justify-content: flex-start;
@@ -15,11 +14,14 @@
   font-weight: bold;
   border-bottom-left-radius: 4px;
   border-top-right-radius: 4px;
+  box-shadow: 6px 6px 0px 0px rgba(34, 32, 83, 1);
 }
 
 .button:hover,
 .button:active {
-  background-color: #233174;
+  font-size: 1rem;
+  border: 1px solid #da480e;
+  background-color: #19255f;
 }
 
 .cartIconContainer {
@@ -43,7 +45,7 @@
   align-self: baseline !important;
   font-weight: 500;
   font-size: 1.2rem;
-  color: #da480e;
+  color: #fff;
 }
 
 .bump {

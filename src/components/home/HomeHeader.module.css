@@ -17,7 +17,8 @@
 }
 
 .welcomeTextContainer {
-  width: 50%;
+  width: 100%;
+  background: linear-gradient(to right, white, transparent);
   gap: 3rem;
   padding: 10% 2%;
 }
@@ -45,6 +46,7 @@
   font-size: 1.2rem;
   font-weight: 600;
   line-height: 1.8rem;
+  width: 50%;
 }
 
 .learnMoreLink {
