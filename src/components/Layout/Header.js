@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { toggleNav } from '../../redux/navBarSlice';
-import HeaderCartButton from './HeaderCartButton';
 import { getLocalStorage } from '../helpers/localStorage';
+import HeaderCartButton from './HeaderCartButton';
 import {
   logOutUser,
   // toLogin,
@@ -60,45 +60,56 @@ const Header = (props) => {
   };
 
   return (
-    <div className={classes.headerWrapper}>
-      <header className={classes.header}>
+    <header className={classes.header}>
+      <div className={classes.logoCont}>
         <h3 className={classes.logo}>
           D<span className={classes.logoStling}>U</span>R
           <span className={classes.logoStling}>A</span>
         </h3>
-        <nav style={isMobile ? navStyle : {}} className={classes.nav}>
-          <NavLink
-            to="/"
-            exact={true}
-            className={classes.navLinks}
-            activeClassName={classes.active}
-            onClick={handleNav}
-          >
-            HOME
-          </NavLink>
+        <HeaderCartButton onClick={props.onClick} />
+      </div>
+      <nav style={isMobile ? navStyle : {}} className={classes.nav}>
+        <NavLink
+          to="/"
+          exact={true}
+          className={classes.navLinks}
+          activeClassName={classes.active}
+          onClick={handleNav}
+        >
+          HOME
+        </NavLink>
 
-          <NavLink
-            to="/products"
-            exact={true}
-            className={classes.navLinks}
-            activeClassName={classes.active}
-            onClick={handleNav}
-          >
-            PRODUCTS
-          </NavLink>
-          <NavLink
-            to="/about"
-            exact={true}
-            className={classes.navLinks}
-            activeClassName={classes.active}
-            onClick={handleNav}
-          >
-            ABOUT
-          </NavLink>
-          <section className={classes.navAuthWrapper}>
-            {!isAuthenticated && (
-              <div>
-                {/* <Link to="/auth">
+        <NavLink
+          to="/products"
+          exact={true}
+          className={classes.navLinks}
+          activeClassName={classes.active}
+          onClick={handleNav}
+        >
+          PRODUCTS
+        </NavLink>
+        <NavLink
+          to="/about"
+          exact={true}
+          className={classes.navLinks}
+          activeClassName={classes.active}
+          onClick={handleNav}
+        >
+          ABOUT
+        </NavLink>
+        <NavLink
+          to="/contact"
+          exact={true}
+          className={classes.navLinks}
+          activeClassName={classes.active}
+          onClick={handleNav}
+        >
+          CONTACT US
+        </NavLink>
+        <section className={classes.navAuthWrapper}>
+          {!isAuthenticated && (
+            <div>
+              {/* <Link to="/auth">
                   <button
                     className={classes.authButton}
                     type="button"
@@ -111,49 +122,43 @@ const Header = (props) => {
                   </button>
                 </Link> */}
 
-                <Link to="/auth">
-                  <button
-                    className={classes.authButton}
-                    type="button"
-                    onClick={() => {
-                      handleNav();
-                      dispatch(toRegister());
-                    }}
-                  >
-                    SIGN UP
-                  </button>
-                </Link>
-              </div>
-            )}
-            {isAuthenticated && user && (
-              <div>
-                <h4 className={classes.username}>{user.name}</h4>
+              <Link to="/auth">
                 <button
+                  className={classes.authButton}
                   type="button"
-                  className={classes.logoutButton}
                   onClick={() => {
-                    handleLogout();
+                    handleNav();
+                    dispatch(toRegister());
                   }}
                 >
-                  LOG OUT
+                  SIGN UP
                 </button>
-              </div>
-            )}
-          </section>
-          <button className={classes.closeMobileNav} onClick={handleNav}>
-            <FaTimes />
-          </button>
-        </nav>
-        <button className={classes.openMobileNav} onClick={handleNav}>
-          <FaBars />
+              </Link>
+            </div>
+          )}
+          {isAuthenticated && user && (
+            <div>
+              <h4 className={classes.username}>{user.name}</h4>
+              <button
+                type="button"
+                className={classes.logoutButton}
+                onClick={() => {
+                  handleLogout();
+                }}
+              >
+                LOG OUT
+              </button>
+            </div>
+          )}
+        </section>
+        <button className={classes.closeMobileNav} onClick={handleNav}>
+          <FaTimes />
         </button>
-      </header>
-      <HeaderCartButton
-        onClick={() => {
-          props.onShowCart();
-        }}
-      />
-    </div>
+      </nav>
+      <button className={classes.openMobileNav} onClick={handleNav}>
+        <FaBars />
+      </button>
+    </header>
   );
 };
 

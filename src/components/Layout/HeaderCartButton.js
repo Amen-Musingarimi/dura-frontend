@@ -1,44 +1,20 @@
-import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import CartIcon from '../Cart/CartIcon';
+import { AiOutlineShoppingCart } from 'react-icons/ai';
 import classes from './HeaderCartButton.module.css';
 
 const HeaderCartButton = (props) => {
   const cartItems = useSelector((state) => state.cart.items);
-  const [btnIsHighlighted, setBtnIsHighlighted] = useState(false);
 
   const numberOfCartItems = cartItems.reduce((curNumber, item) => {
     return curNumber + item.amount;
   }, 0);
 
-  const btnClasses = `${classes.button} ${
-    btnIsHighlighted ? classes.bump : ''
-  }`;
-
-  useEffect(() => {
-    if (cartItems.length === 0) {
-      return;
-    }
-    setBtnIsHighlighted(true);
-
-    const timer = setTimeout(() => {
-      setBtnIsHighlighted(false);
-    }, 300);
-
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [cartItems]);
-
   return (
-    <button className={btnClasses} onClick={props.onClick}>
-      <span className={classes.cartLabel}>Your Cart</span>
-      <div className={classes.cartIconContainer}>
-        <span className={classes.icon}>
-          <CartIcon />
-        </span>
-        <span className={classes.badge}>{numberOfCartItems}</span>
-      </div>
+    <button className={classes.cartBtnClasses} onClick={props.onClick}>
+      <span className={classes.icon}>
+        <AiOutlineShoppingCart />
+      </span>
+      <span className={classes.badge}>{numberOfCartItems}</span>
     </button>
   );
 };

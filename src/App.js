@@ -24,7 +24,7 @@ function App() {
   return (
     <Fragment>
       {cartIsShown && <Cart onClose={hideCartHandler} />}
-      <Header onShowCart={showCartHandler} />
+      <Header onClick={showCartHandler} />
       <main>
         <Routes>
           <Route path="/" index element={<Home />} />
