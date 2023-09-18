@@ -79,4 +79,11 @@
   .averageText {
     text-align: center;
   }
+
+  .averageText {
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.8rem;
+    width: 100%;
+  }
 }

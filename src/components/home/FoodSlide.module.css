@@ -49,6 +49,7 @@
 .productImage {
   width: 30rem;
   height: 20rem;
+  border-radius: 10px;
 }
 
 .nameCont {

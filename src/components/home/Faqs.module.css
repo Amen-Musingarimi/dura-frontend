@@ -6,6 +6,7 @@
   gap: 4rem;
   color: #19255f;
   width: 100%;
+  padding: 0 2%;
 }
 
 .sectionHeading {
@@ -78,4 +79,10 @@
   color: #636262;
   margin: 0;
   padding: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .faqCardsContainer {
+    width: 100%;
+  }
 }
