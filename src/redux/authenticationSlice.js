@@ -8,7 +8,7 @@ import {
 
 const initialState = {
   token: getLocalStorage('token') || null,
-  user: getLocalStorage('user') || null,
+  user: getLocalStorage('username') || null,
   tempUser: {
     name: '',
     username: '',
@@ -110,17 +110,17 @@ const authSlice = createSlice({
         errors: null,
       }))
       .addCase(logInUser.fulfilled, (state, { payload }) => {
-        const { token, user, error } = payload;
+        const { token, username, error } = payload;
 
-        if (token && user) {
+        if (token && username) {
           setLocalStorage('token', token);
-          setLocalStorage('user', user);
+          setLocalStorage('user', username);
         }
 
         return {
           ...state,
           token,
-          user,
+          username,
           isLoading: false,
           tempUser: {
             email: '',
@@ -146,7 +146,7 @@ const authSlice = createSlice({
           ...state,
           isLoading: false,
           token: null,
-          user: null,
+          username: null,
         };
       })
       .addCase(logOutUser.rejected, (state) => {
@@ -156,7 +156,7 @@ const authSlice = createSlice({
           ...state,
           isLoading: false,
           token: null,
-          user: null,
+          username: null,
         };
       });
     builder

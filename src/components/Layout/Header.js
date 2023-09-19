@@ -5,19 +5,17 @@ import { FaBars, FaTimes } from 'react-icons/fa';
 import { toggleNav } from '../../redux/navBarSlice';
 import { getLocalStorage } from '../helpers/localStorage';
 import HeaderCartButton from './HeaderCartButton';
-import {
-  logOutUser,
-  toLogin,
-  toRegister,
-} from '../../redux/authenticationSlice';
+import { logOutUser, toRegister } from '../../redux/authenticationSlice';
 import classes from './Header.module.css';
 
 const Header = (props) => {
   const dispatch = useDispatch();
   const isOpen = useSelector((state) => state.nav.isOpen);
   const isAuthenticated = useSelector((state) => state.auth.token !== null);
+  console.log(isAuthenticated);
 
   const user = getLocalStorage('user');
+  console.log(user);
 
   const navigate = useNavigate();
 
@@ -104,37 +102,22 @@ const Header = (props) => {
         </NavLink>
         <section className={classes.navAuthWrapper}>
           {!isAuthenticated && (
-            <div>
-              <Link to="/auth">
-                <button
-                  className={classes.authButton}
-                  type="button"
-                  onClick={() => {
-                    handleNav();
-                    dispatch(toLogin());
-                  }}
-                >
-                  LOG IN
-                </button>
-              </Link>
-
-              <Link to="/auth">
-                <button
-                  className={classes.authButton}
-                  type="button"
-                  onClick={() => {
-                    handleNav();
-                    dispatch(toRegister());
-                  }}
-                >
-                  SIGN UP
-                </button>
-              </Link>
-            </div>
+            <Link to="/auth">
+              <button
+                className={classes.authButton}
+                type="button"
+                onClick={() => {
+                  handleNav();
+                  dispatch(toRegister());
+                }}
+              >
+                SIGN UP
+              </button>
+            </Link>
           )}
           {isAuthenticated && user && (
             <div>
-              <h4 className={classes.username}>{user.name}</h4>
+              <h4 className={classes.username}>{user}</h4>
               <button
                 type="button"
                 className={classes.logoutButton}
