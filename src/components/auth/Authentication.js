@@ -19,7 +19,7 @@ const Authentication = () => {
     errors,
     tempUser: {
       name,
-      username,
+      username, // Remove the username field from here
       email: initialEmail,
       password,
       confirmPassword: initialConfirmPassword,
@@ -28,7 +28,6 @@ const Authentication = () => {
 
   const formAuth = useSelector((state) => state.auth.formAuth);
 
-  // Initialize state for controlled inputs
   const [email, setEmail] = useState(initialEmail || '');
   const [confirmPassword, setConfirmPassword] = useState(
     initialConfirmPassword || ''
@@ -47,9 +46,10 @@ const Authentication = () => {
   const handleRegister = () => {
     dispatch(
       registerUser({
-        user: { name, username, email, password, confirmPassword },
+        user: { name, username, email, password },
       })
     );
+
     dispatch(toggleFormAuth());
   };
 
@@ -98,16 +98,28 @@ const Authentication = () => {
         {errors && <p className={classes.authErrorMessage}>{errors}</p>}
 
         {formAuth === 'register' && (
-          <input
-            type="text"
-            placeholder="name"
-            id="name"
-            name="name"
-            value={name}
-            onChange={(e) => handleChange(e)}
-            className={classes.authFormInput}
-            required
-          />
+          <>
+            <input
+              type="text"
+              placeholder="name"
+              id="name"
+              name="name"
+              value={name}
+              onChange={(e) => handleChange(e)}
+              className={classes.authFormInput}
+              required
+            />
+            <input
+              type="text"
+              placeholder="username"
+              id="username"
+              name="username"
+              value={username || ''}
+              onChange={(e) => handleChange(e)}
+              className={classes.authFormInput}
+              required
+            />
+          </>
         )}
 
         <input

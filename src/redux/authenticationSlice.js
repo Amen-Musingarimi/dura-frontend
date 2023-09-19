@@ -11,8 +11,9 @@ const initialState = {
   user: getLocalStorage('user') || null,
   tempUser: {
     name: '',
+    username: '',
+    email: '',
     password: '',
-    confirmPassword: '',
   },
   isLoading: false,
   errors: null,
@@ -28,12 +29,10 @@ export const logInUser = createAsyncThunk(
         userInput
       );
       const responseData = response.data;
-      console.log(responseData);
 
       const { token } = responseData;
 
       const { username } = responseData;
-      console.log(username);
 
       const { error } = responseData;
 
@@ -67,7 +66,7 @@ export const registerUser = createAsyncThunk(
         'http://localhost:3000/users',
         userInput
       );
-      console.log(response.data);
+
       return response.data;
     } catch (error) {
       if (error.response.status === 422) {
@@ -172,7 +171,7 @@ const authSlice = createSlice({
           name: '',
           username: '',
           email: '',
-          confirmPassword: '',
+          password: '',
         },
       }))
       .addCase(registerUser.rejected, (state, { payload }) => ({
