@@ -24,7 +24,7 @@ export const logInUser = createAsyncThunk(
   async (userInput, thunkAPI) => {
     try {
       const response = await axios.post(
-        'http://localhost:3000/sessions',
+        'http://localhost:3000/auth/login',
         userInput
       );
       const responseData = response.data;
@@ -46,7 +46,7 @@ export const logOutUser = createAsyncThunk(
   'auth/logout',
   async (_, thunkAPI) => {
     try {
-      const response = await axios.delete('http://localhost:3000/sessions', {
+      const response = await axios.delete('http://localhost:3000/auth/logout', {
         headers: {
           authorization: thunkAPI.getState().auth.token,
         },
@@ -122,7 +122,7 @@ const authSlice = createSlice({
           user,
           isLoading: false,
           tempUser: {
-            name: '',
+            email: '',
             password: '',
           },
           errors: error,
@@ -168,6 +168,8 @@ const authSlice = createSlice({
         isLoading: false,
         tempUser: {
           name: '',
+          username: '',
+          email: '',
           confirmPassword: '',
         },
       }))

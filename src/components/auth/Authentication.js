@@ -17,7 +17,7 @@ const Authentication = () => {
   const {
     token,
     errors,
-    tempUser: { name, password, confirmPassword },
+    tempUser: { name, username, email, password, confirmPassword },
   } = useSelector((state) => state.auth);
 
   const formAuth = useSelector((state) => state.auth.formAuth);
@@ -29,11 +29,11 @@ const Authentication = () => {
   const handleLogIn = (e) => {
     e.preventDefault();
 
-    dispatch(logInUser({ name, password }));
+    dispatch(logInUser({ email, password }));
   };
 
   const handleRegister = () => {
-    dispatch(registerUser({ user: { name, password } }));
+    dispatch(registerUser({ user: { name, username, email, password } }));
     dispatch(toggleFormAuth());
   };
 
@@ -73,12 +73,26 @@ const Authentication = () => {
           {formAuth === 'login' ? 'Log In' : 'Register'}
         </h3>
         {errors && <p className={classes.authErrorMessage}>{errors}</p>}
+
+        {formAuth === 'register' && (
+          <input
+            type="text"
+            placeholder="name"
+            id="name"
+            name="name"
+            value={name}
+            onChange={(e) => handleChange(e)}
+            className={classes.authFormInput}
+            required
+          />
+        )}
+
         <input
           type="text"
-          placeholder="name"
-          id="name"
-          name="name"
-          value={name}
+          placeholder="email"
+          id="email"
+          name="email"
+          value={email}
           onChange={(e) => handleChange(e)}
           className={classes.authFormInput}
           required

@@ -49,7 +49,7 @@
   color: #eff1fd;
   font-family: inherit;
   font-weight: 500;
-  margin-right: 0.5rem; /*remember to delete this */
+  /* margin-right: 0.5rem; remember to delete this */
 }
 
 .logoutButton {
