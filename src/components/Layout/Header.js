@@ -71,9 +71,8 @@ const Header = (props) => {
       <nav style={isMobile ? navStyle : {}} className={classes.nav}>
         <NavLink
           to="/"
-          exact={true}
+          exact={true.toString()}
           className={classes.navLinks}
-          activeClassName={classes.active}
           onClick={handleNav}
         >
           HOME
@@ -81,27 +80,24 @@ const Header = (props) => {
 
         <NavLink
           to="/products"
-          exact={true}
+          exact={true.toString()}
           className={classes.navLinks}
-          activeClassName={classes.active}
           onClick={handleNav}
         >
           PRODUCTS
         </NavLink>
         <NavLink
           to="/about"
-          exact={true}
+          exact={true.toString()}
           className={classes.navLinks}
-          activeClassName={classes.active}
           onClick={handleNav}
         >
           ABOUT
         </NavLink>
         <NavLink
           to="/contact"
-          exact={true}
+          exact={true.toString()}
           className={classes.navLinks}
-          activeClassName={classes.active}
           onClick={handleNav}
         >
           CONTACT US

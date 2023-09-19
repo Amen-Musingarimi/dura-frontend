@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import {
@@ -17,10 +17,22 @@ const Authentication = () => {
   const {
     token,
     errors,
-    tempUser: { name, username, email, password, confirmPassword },
+    tempUser: {
+      name,
+      username,
+      email: initialEmail,
+      password,
+      confirmPassword: initialConfirmPassword,
+    },
   } = useSelector((state) => state.auth);
 
   const formAuth = useSelector((state) => state.auth.formAuth);
+
+  // Initialize state for controlled inputs
+  const [email, setEmail] = useState(initialEmail || '');
+  const [confirmPassword, setConfirmPassword] = useState(
+    initialConfirmPassword || ''
+  );
 
   useEffect(() => {
     dispatch(clearErrors());
@@ -33,18 +45,29 @@ const Authentication = () => {
   };
 
   const handleRegister = () => {
-    dispatch(registerUser({ user: { name, username, email, password } }));
+    dispatch(
+      registerUser({
+        user: { name, username, email, password, confirmPassword },
+      })
+    );
     dispatch(toggleFormAuth());
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    dispatch(handleUpdate({ name, value }));
+
+    if (name === 'email') {
+      setEmail(value);
+    } else if (name === 'confirmPassword') {
+      setConfirmPassword(value);
+    } else {
+      dispatch(handleUpdate({ name, value }));
+    }
   };
 
   useEffect(() => {
     if (token) {
-      navigate('/home');
+      navigate('/');
     }
   }, [token, navigate]);
 

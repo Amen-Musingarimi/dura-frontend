@@ -28,14 +28,16 @@ export const logInUser = createAsyncThunk(
         userInput
       );
       const responseData = response.data;
+      console.log(responseData);
 
       const { token } = responseData;
 
-      const { user } = responseData;
+      const { username } = responseData;
+      console.log(username);
 
       const { error } = responseData;
 
-      return { token, user, error };
+      return { token, username, error };
     } catch (error) {
       return thunkAPI.rejectWithValue('Invalid name or password!');
     }
@@ -65,7 +67,7 @@ export const registerUser = createAsyncThunk(
         'http://localhost:3000/users',
         userInput
       );
-
+      console.log(response.data);
       return response.data;
     } catch (error) {
       if (error.response.status === 422) {
