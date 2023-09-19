@@ -16,7 +16,6 @@ const ProductDetails = () => {
 
   const { products } = useSelector((state) => state.product);
   const foundProduct = findFoodById(products, parseInt(id));
-  console.log(foundProduct.name);
 
   const addToCartHandler = (quantity) => {
     dispatch(

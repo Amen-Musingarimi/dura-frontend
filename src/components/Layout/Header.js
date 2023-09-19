@@ -12,10 +12,8 @@ const Header = (props) => {
   const dispatch = useDispatch();
   const isOpen = useSelector((state) => state.nav.isOpen);
   const isAuthenticated = useSelector((state) => state.auth.token !== null);
-  console.log(isAuthenticated);
 
   const user = getLocalStorage('user');
-  console.log(user);
 
   const navigate = useNavigate();
 
@@ -122,6 +120,7 @@ const Header = (props) => {
                 type="button"
                 className={classes.logoutButton}
                 onClick={() => {
+                  handleNav();
                   handleLogout();
                 }}
               >

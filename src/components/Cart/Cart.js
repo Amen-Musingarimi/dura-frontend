@@ -3,11 +3,26 @@ import Modal from '../UI/Modal';
 import CartItem from './CartItem';
 import { AiOutlineClose } from 'react-icons/ai';
 import { removeItem, addItem, clearCart } from '../../redux/cartSlice';
+import { useNavigate } from 'react-router-dom';
+import { getLocalStorage } from '../helpers/localStorage';
 import classes from './Cart.module.css';
 
 const Cart = (props) => {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.items);
+  const isAuthenticated = useSelector((state) => state.auth.token !== null);
+  const user = getLocalStorage('user');
+  const navigate = useNavigate();
+  console.log(isAuthenticated, user);
+
+  const orderHandler = () => {
+    if (isAuthenticated) {
+      console.log('User is authenticated. Implement the order logic here.');
+    } else {
+      navigate('/auth');
+      props.onClose();
+    }
+  };
 
   const totalAmount = cartItems
     .reduce((acc, item) => {
@@ -57,7 +72,11 @@ const Cart = (props) => {
         <button className={classes['button--alt']} onClick={clearCartHandler}>
           Cancel
         </button>
-        {hasItems && <button className={classes.button}>Order</button>}
+        {hasItems && (
+          <button className={classes.button} onClick={orderHandler}>
+            Order
+          </button>
+        )}
       </div>
     </Modal>
   );
