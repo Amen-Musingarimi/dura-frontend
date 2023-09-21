@@ -114,7 +114,7 @@ const Header = (props) => {
             </Link>
           )}
           {isAuthenticated && user && (
-            <div>
+            <div className={classes.userLogoutCont}>
               <h4 className={classes.username}>{user}</h4>
               <button
                 type="button"

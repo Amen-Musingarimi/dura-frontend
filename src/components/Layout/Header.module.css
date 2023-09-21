@@ -49,11 +49,24 @@
   color: #eff1fd;
   font-family: inherit;
   font-weight: 500;
-  /* margin-right: 0.5rem; remember to delete this */
+}
+
+.userLogoutCont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.2rem;
+}
+
+.username {
+  display: none;
 }
 
 .logoutButton {
-  background-color: #eff1fd;
+  background-color: #fff;
+  font-family: inherit;
+  font-weight: 500;
   color: #e04040;
   border: 1px solid #e04040;
 }
@@ -62,8 +75,9 @@
   background-color: #152153;
 }
 
-.logoutButton {
-  background-color: #dce0f7;
+.logoutButton:hover {
+  background-color: #e04040;
+  color: #fff;
 }
 
 .active {
@@ -124,5 +138,17 @@
 @media only screen and (max-width: 768px) {
   .logo {
     display: none;
+  }
+
+  .userLogoutCont {
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .username {
+    display: block;
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 500;
   }
 }

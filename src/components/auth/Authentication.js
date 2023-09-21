@@ -19,7 +19,7 @@ const Authentication = () => {
     errors,
     tempUser: {
       name,
-      username, // Remove the username field from here
+      username,
       email: initialEmail,
       password,
       confirmPassword: initialConfirmPassword,
@@ -82,15 +82,6 @@ const Authentication = () => {
 
   return (
     <div className={classes.authFormsContainter}>
-      <div className={classes.authFormCallToActionText}>
-        <h3 className={classes.authAppName}>Dura | The Zim Flavors Hub</h3>
-        <p className={classes.welcomeMessage}>
-          Discover the Essence of Tradition in Every Bite! Sign up or log in now
-          to access a world of authentic Zimbabwean flavors. Shop our collection
-          of premium traditional raw foods and bring home the taste of heritage.
-          Your journey to unique nourishment begins here!
-        </p>
-      </div>
       <form onSubmit={(e) => handleSubmit(e)}>
         <h3 className="auth-title">
           {formAuth === 'login' ? 'Log In' : 'Register'}
