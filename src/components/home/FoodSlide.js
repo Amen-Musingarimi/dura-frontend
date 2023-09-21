@@ -8,7 +8,6 @@ const FoodSlide = () => {
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const dispatch = useDispatch();
   const { products } = useSelector((state) => state.product);
-  console.log(products);
 
   useEffect(() => {
     dispatch(getProductsAsync());
@@ -36,6 +35,19 @@ const FoodSlide = () => {
 
   const currentCard = products[currentCardIndex];
 
+  if (!currentCard) {
+    return (
+      <div className={classes.loadingText}>
+        <p>Loading...</p>
+      </div>
+    );
+  }
+
+  const imageUrl =
+    currentCard && currentCard.image
+      ? `data:${currentCard.image.content_type};base64,${currentCard.image.data}`
+      : '';
+
   return (
     <div className={classes.sliderContainer}>
       <button className={classes.sliderBtn} onClick={previousCard}>
@@ -44,7 +56,7 @@ const FoodSlide = () => {
       <div className={classes.sliderCard}>
         <div className={classes.imageNameWrapper}>
           <img
-            src={currentCard.image}
+            src={imageUrl}
             alt="ProductImage"
             className={classes.productImage}
           />

@@ -6,6 +6,16 @@
   padding: 2rem 4rem;
 }
 
+.loadingText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
 .productDetailsContainer img {
   width: 40rem;
   border-radius: 2rem;
