@@ -17,6 +17,10 @@ const ProductDetails = () => {
   const { products } = useSelector((state) => state.product);
   const foundProduct = findFoodById(products, parseInt(id));
 
+  const imageUrl = foundProduct.image
+    ? `data:${foundProduct.image.content_type};base64,${foundProduct.image.data}`
+    : '';
+
   const addToCartHandler = (quantity) => {
     dispatch(
       addItem({
@@ -31,7 +35,7 @@ const ProductDetails = () => {
   return (
     <Card>
       <div className={classes.productDetailsContainer}>
-        <img src={foundProduct.image} alt="ProductImage" />
+        <img src={imageUrl} alt="ProductImage" />
         <div className={classes.productTextContainer}>
           <div className={classes.productNames}>
             <h3>{foundProduct.name}</h3>
