@@ -1,18 +1,20 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router';
-import { createHotel } from '../redux/hotel/newhotelSlice';
-import '../styles/AddHotel.css';
+import { addProductAsync } from '../../redux/productsSlice';
+import classes from './AddProduct.module.css';
 
-const AddHotel = () => {
+const AddProduct = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const [image, setImage] = useState(null);
   const [name, setName] = useState('');
+  const [englishName, setEnglishName] = useState('');
   const [description, setDescription] = useState('');
-  const [duration, setDuration] = useState(null);
   const [price, setPrice] = useState(null);
+  const [measurementUnit, setMeasurementUnit] = useState('');
+  const [totalUnits, setTotalUnits] = useState(null);
+  const [image, setImage] = useState(null);
 
   const handleFileChange = (e) => {
     if (e.target.files.length > 0) {
@@ -22,15 +24,17 @@ const AddHotel = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newHotel = {
+    const newProduct = {
       name,
+      englishName,
       description,
-      duration,
       price,
+      measurementUnit,
+      totalUnits,
       image,
     };
-    dispatch(createHotel(newHotel));
-    navigate('/home', {
+    dispatch(addProductAsync(newProduct));
+    navigate('/products', {
       state: {
         directAccess: false,
       },
@@ -38,55 +42,68 @@ const AddHotel = () => {
   };
 
   return (
-    <div className="add-hotel-container">
-      <div className="add-hotel-headings-container">
-        <h2 className="add-hotel-heading">Add Hotel Room</h2>
-        <p className="add-hotel-text">
-          Show off your hotel&apos;s breathtaking views and top-notch service
-        </p>
-      </div>
+    <div className={classes.addProducContainer}>
+      <h2 className={classes.containerHeading}>Add A Product</h2>
       <form action="submt" className="add-hotel-form" onSubmit={handleSubmit}>
         <input
           type="text"
-          className="text-input input"
-          placeholder="Hotel Room Name"
+          className={classes.input}
+          placeholder="Product Name"
           onChange={(e) => setName(e.target.value)}
           value={name}
           name="name"
           required
         />
+        <input
+          type="text"
+          className={classes.input}
+          placeholder="English Name"
+          onChange={(e) => setEnglishName(e.target.value)}
+          value={englishName}
+          name="name"
+          required
+        />
         <textarea
-          className="input-description input"
-          placeholder="Description"
+          className={classes.textArea}
+          placeholder="Product Description"
           name="description"
           onChange={(e) => setDescription(e.target.value)}
           value={description}
           required
         />
-        <div className="number-inputs-container">
+        <div className={classes.numberInputs}>
           <input
             type="number"
-            className="number-input input"
-            placeholder="Standard Duration"
-            name="duration"
-            onChange={(e) => setDuration(e.target.value)}
-            value={duration}
-            required
-          />
-          <input
-            type="number"
-            className="number-input input"
-            placeholder="Price"
+            className={classes.input}
+            placeholder="Price/Unit in USD"
             name="price"
             onChange={(e) => setPrice(e.target.value)}
             value={price}
             required
           />
+          <input
+            type="text"
+            className={classes.input}
+            placeholder="Measurement Unit"
+            name="measurementUnit"
+            onChange={(e) => setMeasurementUnit(e.target.value)}
+            value={measurementUnit}
+            required
+          />
+          <input
+            type="number"
+            className={classes.input}
+            placeholder="Total Units"
+            name="units"
+            onChange={(e) => setTotalUnits(e.target.value)}
+            value={totalUnits}
+            required
+          />
         </div>
-        <div className="image-container">
+        <div className={classes.imageContainer}>
           <input
             type="file"
-            className="image-input"
+            className={classes.imageInput}
             onChange={handleFileChange}
             required
           />
@@ -98,12 +115,12 @@ const AddHotel = () => {
             />
           )}
         </div>
-        <button type="submit" className="add-hotel-btn">
-          Add Hotel
+        <button type="submit" className={classes.addProductBtn}>
+          Add Product
         </button>
       </form>
     </div>
   );
 };
 
-export default AddHotel;
+export default AddProduct;

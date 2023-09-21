@@ -1,9 +1,8 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { getLocalStorage } from '../components/helpers/localStorage';
-import PRODUCTS from './initialProducts';
 
 const initialState = {
-  products: PRODUCTS,
+  products: [],
   isLoading: false,
   fetched: false,
   error: null,

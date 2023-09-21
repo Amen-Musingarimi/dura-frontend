@@ -9,6 +9,8 @@ import About from './components/About/About';
 import Cart from './components/Cart/Cart';
 import Footer from './components/Footer/Footer';
 import ContactButton from './components/contact/ContactButton';
+import AddProduct from './components/Admin/AddProduct';
+import './App.css';
 
 function App() {
   const [cartIsShown, setCartIsShown] = useState(false);
@@ -32,6 +34,7 @@ function App() {
           <Route path="/products/:id" index element={<ProductDetails />} />
           <Route path="/about" index element={<About />} />
           <Route exact path="/auth" element={<Authentication />} />
+          <Route exact path="/admin" element={<AddProduct />} />
         </Routes>
       </main>
       <ContactButton />
