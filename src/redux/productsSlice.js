@@ -16,11 +16,11 @@ export const addProductAsync = createAsyncThunk(
 
       const formData = new FormData();
       formData.append('product[name]', newProduct.name);
-      formData.append('product[english_name]', newProduct.english_name);
+      formData.append('product[english_name]', newProduct.englishName);
       formData.append('product[description]', newProduct.description);
       formData.append('product[price]', newProduct.price);
-      formData.append('product[measurement_unit]', newProduct.measurement_unit);
-      formData.append('product[total_units]', newProduct.total_units);
+      formData.append('product[measurement_unit]', newProduct.measurementUnit);
+      formData.append('product[total_units]', newProduct.totalUnits);
       formData.append('product[image]', newProduct.image);
 
       const response = await fetch('http://localhost:3000/products', {

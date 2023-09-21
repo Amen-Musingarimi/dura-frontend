@@ -17,11 +17,11 @@ const AvailableProducts = () => {
       key={prod.id}
       id={prod.id}
       name={prod.name}
-      englishName={prod.englishName}
+      englishName={prod.english_name}
       description={prod.description}
       image={prod.image}
       price={prod.price}
-      unit={prod.unit}
+      unit={prod.measurement_unit}
     />
   ));
 

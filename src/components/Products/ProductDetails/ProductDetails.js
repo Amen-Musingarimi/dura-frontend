@@ -36,7 +36,7 @@ const ProductDetails = () => {
           <div className={classes.productNames}>
             <h3>{foundProduct.name}</h3>
             <span> | </span>
-            <h3>{foundProduct.englishName}</h3>
+            <h3>{foundProduct.english_name}</h3>
           </div>
           <p className={classes.productPrice}>${foundProduct.price}</p>
           <p className={classes.productAvailability}>

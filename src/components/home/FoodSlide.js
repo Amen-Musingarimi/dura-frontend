@@ -8,6 +8,7 @@ const FoodSlide = () => {
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const dispatch = useDispatch();
   const { products } = useSelector((state) => state.product);
+  console.log(products);
 
   useEffect(() => {
     dispatch(getProductsAsync());

@@ -28,11 +28,12 @@ const AddProduct = () => {
       name,
       englishName,
       description,
-      price,
+      price: parseFloat(price),
       measurementUnit,
-      totalUnits,
+      totalUnits: parseInt(totalUnits),
       image,
     };
+    console.log(newProduct);
     dispatch(addProductAsync(newProduct));
     navigate('/products', {
       state: {
@@ -44,7 +45,7 @@ const AddProduct = () => {
   return (
     <div className={classes.addProducContainer}>
       <h2 className={classes.containerHeading}>Add A Product</h2>
-      <form action="submt" className="add-hotel-form" onSubmit={handleSubmit}>
+      <form action="submit" className="add-hotel-form" onSubmit={handleSubmit}>
         <input
           type="text"
           className={classes.input}
@@ -60,7 +61,7 @@ const AddProduct = () => {
           placeholder="English Name"
           onChange={(e) => setEnglishName(e.target.value)}
           value={englishName}
-          name="name"
+          name="english_name"
           required
         />
         <textarea
@@ -85,7 +86,7 @@ const AddProduct = () => {
             type="text"
             className={classes.input}
             placeholder="Measurement Unit"
-            name="measurementUnit"
+            name="measurement_unit"
             onChange={(e) => setMeasurementUnit(e.target.value)}
             value={measurementUnit}
             required
