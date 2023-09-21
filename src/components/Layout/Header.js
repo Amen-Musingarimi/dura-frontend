@@ -91,12 +91,20 @@ const Header = (props) => {
           ABOUT
         </NavLink>
         <NavLink
-          to="/contact"
+          to="/transactions"
           exact={true.toString()}
           className={classes.navLinks}
           onClick={handleNav}
         >
-          CONTACT US
+          TRANSACTIONS
+        </NavLink>
+        <NavLink
+          to="/admin"
+          exact={true.toString()}
+          className={classes.navLinks}
+          onClick={handleNav}
+        >
+          ADMIN
         </NavLink>
         <section className={classes.navAuthWrapper}>
           {!isAuthenticated && (
