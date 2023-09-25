@@ -2,7 +2,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import Modal from '../UI/Modal';
 import CartItem from './CartItem';
 import { AiOutlineClose } from 'react-icons/ai';
-import { removeItem, addItem, clearCart } from '../../redux/cartSlice';
+import {
+  removeItemAsync,
+  updateItemAsync,
+  clearCart,
+} from '../../redux/cartSlice';
 import { useNavigate } from 'react-router-dom';
 import { getLocalStorage } from '../helpers/localStorage';
 import classes from './Cart.module.css';
@@ -33,11 +37,11 @@ const Cart = (props) => {
   const hasItems = cartItems.length > 0;
 
   const cartItemRemoveHandler = (id) => {
-    dispatch(removeItem(id));
+    dispatch(removeItemAsync(id));
   };
 
   const cartItemAddHandler = (item) => {
-    dispatch(addItem({ ...item, amount: 1 }));
+    dispatch(updateItemAsync(item));
   };
 
   const clearCartHandler = () => {

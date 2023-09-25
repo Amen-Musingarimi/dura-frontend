@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { addItem } from '../../../redux/cartSlice';
+import { addItemAsync } from '../../../redux/cartSlice';
 import { getProductsAsync } from '../../../redux/productsSlice';
 import ProductItemForm from './ProductItemForm';
 import Card from '../../UI/Card';
@@ -26,11 +26,9 @@ const ProductDetails = () => {
 
   const addToCartHandler = (quantity) => {
     dispatch(
-      addItem({
-        id: id,
-        name: foundProduct.name,
-        amount: quantity,
-        price: foundProduct.price,
+      addItemAsync({
+        product_id: id,
+        quantity: quantity,
       })
     );
   };
