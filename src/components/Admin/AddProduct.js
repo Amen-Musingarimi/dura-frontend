@@ -33,7 +33,7 @@ const AddProduct = () => {
       totalUnits: parseInt(totalUnits),
       image,
     };
-    console.log(newProduct);
+
     dispatch(addProductAsync(newProduct));
     navigate('/products', {
       state: {

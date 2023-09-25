@@ -31,10 +31,9 @@ const Cart = (props) => {
   const isAuthenticated = useSelector((state) => state.auth.token !== null);
   const user = getLocalStorage('user');
   const navigate = useNavigate();
-  console.log(isAuthenticated, user);
 
   const orderHandler = () => {
-    if (isAuthenticated) {
+    if (isAuthenticated & user) {
       console.log('User is authenticated. Implement the order logic here.');
     } else {
       navigate('/auth');
@@ -44,7 +43,7 @@ const Cart = (props) => {
 
   const totalAmount = cartItems
     .reduce((acc, item) => {
-      return acc + item.price * item.amount;
+      return acc + item.price * item.quantity;
     }, 0)
     .toFixed(2);
 

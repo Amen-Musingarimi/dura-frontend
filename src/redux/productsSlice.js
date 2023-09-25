@@ -69,7 +69,7 @@ const productsSlice = createSlice({
     builder.addCase(addProductAsync.fulfilled, (state, action) => ({
       ...state,
       isLoading: false,
-      hotels: [...state.products, action.payload],
+      products: [...state.products, action.payload],
     }));
     builder.addCase(addProductAsync.rejected, (state, action) => ({
       ...state,
