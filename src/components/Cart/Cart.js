@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Modal from '../UI/Modal';
 import CartItem from './CartItem';
+import { getLocalStorage } from '../helpers/localStorage';
 import { AiOutlineClose } from 'react-icons/ai';
 import {
   removeItemAsync,
@@ -10,7 +11,6 @@ import {
   fetchCart,
 } from '../../redux/cartSlice';
 import { useNavigate } from 'react-router-dom';
-import { getLocalStorage } from '../helpers/localStorage';
 import classes from './Cart.module.css';
 
 const Cart = (props) => {
@@ -30,7 +30,7 @@ const Cart = (props) => {
   });
 
   useEffect(() => {
-    dispatch(fetchCart(1));
+    dispatch(fetchCart());
   }, [dispatch]);
 
   console.log(cartItems);

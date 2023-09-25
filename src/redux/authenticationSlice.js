@@ -32,12 +32,13 @@ export const logInUser = createAsyncThunk(
 
       const { token } = responseData;
 
+      const { cart_id } = responseData;
+
       const { user } = responseData;
-      console.log(user);
 
       const { error } = responseData;
 
-      return { token, user, error };
+      return { token, cart_id, user, error };
     } catch (error) {
       return thunkAPI.rejectWithValue('Invalid name or password!');
     }
@@ -111,16 +112,18 @@ const authSlice = createSlice({
         errors: null,
       }))
       .addCase(logInUser.fulfilled, (state, { payload }) => {
-        const { token, user, error } = payload;
+        const { token, cart_id, user, error } = payload;
 
-        if (token && user) {
+        if (token && cart_id && user) {
           setLocalStorage('token', token);
+          setLocalStorage('cart_id', cart_id);
           setLocalStorage('user', user);
         }
 
         return {
           ...state,
           token,
+          cart_id,
           user,
           isLoading: false,
           tempUser: {
@@ -142,6 +145,7 @@ const authSlice = createSlice({
       }))
       .addCase(logOutUser.fulfilled, (state) => {
         removeLocalStorage('token');
+        removeLocalStorage('cart_id');
         removeLocalStorage('user');
         return {
           ...state,
@@ -152,11 +156,13 @@ const authSlice = createSlice({
       })
       .addCase(logOutUser.rejected, (state) => {
         removeLocalStorage('token');
+        removeLocalStorage('cart_id');
         removeLocalStorage('user');
         return {
           ...state,
           isLoading: false,
           token: null,
+          cart_id: null,
           user: null,
         };
       });
