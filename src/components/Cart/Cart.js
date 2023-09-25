@@ -13,7 +13,21 @@ import classes from './Cart.module.css';
 
 const Cart = (props) => {
   const dispatch = useDispatch();
-  const cartItems = useSelector((state) => state.cart.items);
+  const products = useSelector((state) => state.product.products);
+  const cartItems = useSelector((state) => {
+    return state.cart.items.map((item) => {
+      const product = products.find(
+        (product) => product.id === item.product_id
+      );
+      return {
+        ...item,
+        name: product.name,
+        price: product.price,
+      };
+    });
+  });
+
+  console.log(cartItems);
   const isAuthenticated = useSelector((state) => state.auth.token !== null);
   const user = getLocalStorage('user');
   const navigate = useNavigate();
@@ -41,7 +55,13 @@ const Cart = (props) => {
   };
 
   const cartItemAddHandler = (item) => {
-    dispatch(updateItemAsync(item));
+    dispatch(
+      updateItemAsync({
+        id: item.id,
+        product_id: item.product_id,
+        quantity: item.quantity + 1,
+      })
+    );
   };
 
   const clearCartHandler = () => {
@@ -60,8 +80,9 @@ const Cart = (props) => {
         {cartItems.map((item) => (
           <CartItem
             key={item.id}
+            product_id={item.product_id}
             name={item.name}
-            amount={item.amount}
+            amount={item.quantity}
             price={item.price}
             onRemove={() => cartItemRemoveHandler(item.id)}
             onAdd={() => cartItemAddHandler(item)}

@@ -6,7 +6,7 @@ const HeaderCartButton = (props) => {
   const cartItems = useSelector((state) => state.cart.items);
 
   const numberOfCartItems = cartItems.reduce((curNumber, item) => {
-    return curNumber + item.amount;
+    return curNumber + item.quantity;
   }, 0);
 
   return (
