@@ -123,7 +123,7 @@ const Header = (props) => {
           )}
           {isAuthenticated && user && (
             <div className={classes.userLogoutCont}>
-              <h4 className={classes.username}>{user}</h4>
+              <h4 className={classes.username}>{user.username}</h4>
               <button
                 type="button"
                 className={classes.logoutButton}

@@ -8,10 +8,10 @@ import {
 
 const initialState = {
   token: getLocalStorage('token') || null,
-  user: getLocalStorage('username') || null,
+  user: getLocalStorage('user') || null,
   tempUser: {
     name: '',
-    username: '',
+    user: '',
     email: '',
     password: '',
   },
@@ -32,11 +32,12 @@ export const logInUser = createAsyncThunk(
 
       const { token } = responseData;
 
-      const { username } = responseData;
+      const { user } = responseData;
+      console.log(user);
 
       const { error } = responseData;
 
-      return { token, username, error };
+      return { token, user, error };
     } catch (error) {
       return thunkAPI.rejectWithValue('Invalid name or password!');
     }
@@ -110,17 +111,17 @@ const authSlice = createSlice({
         errors: null,
       }))
       .addCase(logInUser.fulfilled, (state, { payload }) => {
-        const { token, username, error } = payload;
+        const { token, user, error } = payload;
 
-        if (token && username) {
+        if (token && user) {
           setLocalStorage('token', token);
-          setLocalStorage('user', username);
+          setLocalStorage('user', user);
         }
 
         return {
           ...state,
           token,
-          username,
+          user,
           isLoading: false,
           tempUser: {
             email: '',
@@ -146,7 +147,7 @@ const authSlice = createSlice({
           ...state,
           isLoading: false,
           token: null,
-          username: null,
+          user: null,
         };
       })
       .addCase(logOutUser.rejected, (state) => {
@@ -156,7 +157,7 @@ const authSlice = createSlice({
           ...state,
           isLoading: false,
           token: null,
-          username: null,
+          user: null,
         };
       });
     builder
@@ -169,7 +170,7 @@ const authSlice = createSlice({
         isLoading: false,
         tempUser: {
           name: '',
-          username: '',
+          user: '',
           email: '',
           password: '',
         },

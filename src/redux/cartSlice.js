@@ -3,11 +3,14 @@ import axios from 'axios';
 import { getLocalStorage } from '../components/helpers/localStorage';
 
 // Async action for fetching the cart from the backend
-export const fetchCart = createAsyncThunk('cart/fetchCart', async () => {
+export const fetchCart = createAsyncThunk('cart/fetchCart', async (cartId) => {
   const token = getLocalStorage('token');
-  const response = await axios.get('http://localhost:3000/cart_items', {
-    headers: { Authorization: `Bearer ${token}` },
-  });
+  const response = await axios.get(
+    `fetch(http://localhost:3000/carts/${cartId})`,
+    {
+      headers: { Authorization: `Bearer ${token}` },
+    }
+  );
   return response.data;
 });
 

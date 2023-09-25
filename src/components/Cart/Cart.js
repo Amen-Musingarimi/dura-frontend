@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Modal from '../UI/Modal';
 import CartItem from './CartItem';
@@ -6,6 +7,7 @@ import {
   removeItemAsync,
   updateItemAsync,
   clearCart,
+  fetchCart,
 } from '../../redux/cartSlice';
 import { useNavigate } from 'react-router-dom';
 import { getLocalStorage } from '../helpers/localStorage';
@@ -26,6 +28,10 @@ const Cart = (props) => {
       };
     });
   });
+
+  useEffect(() => {
+    dispatch(fetchCart(1));
+  }, [dispatch]);
 
   console.log(cartItems);
   const isAuthenticated = useSelector((state) => state.auth.token !== null);
