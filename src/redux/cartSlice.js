@@ -9,8 +9,13 @@ export const fetchCart = createAsyncThunk('cart/fetchCart', async () => {
   const response = await axios.get(`http://localhost:3000/carts/${cart_id}`, {
     headers: { Authorization: `Bearer ${token}` },
   });
-  console.log(response.data);
-  return response.data;
+   const responceData = response.data
+
+   const cart = responceData
+   
+   const { cart_items } = responceData
+   
+   return {cart, cart_items};
 });
 
 // Async action for adding an item to the cart
@@ -68,8 +73,9 @@ const cartSlice = createSlice({
         state.status = 'loading';
       })
       .addCase(fetchCart.fulfilled, (state, action) => {
-        state.status = 'succeeded';
-        state.items = action.payload; // replace with your actual data path
+        const updatedState = state;
+        const newStore = action.payload.cart_items;
+        updatedState.items = newStore;
       })
       .addCase(fetchCart.rejected, (state, action) => {
         state.status = 'failed';
