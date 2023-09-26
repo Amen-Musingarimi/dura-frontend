@@ -8,6 +8,7 @@ import {
   toggleFormAuth,
   clearErrors,
 } from '../../redux/authenticationSlice';
+import { fetchCart } from '../../redux/cartSlice';
 import classes from './Authentication.module.css';
 
 const Authentication = () => {
@@ -41,6 +42,7 @@ const Authentication = () => {
     e.preventDefault();
 
     dispatch(logInUser({ email, password }));
+    dispatch(fetchCart());
   };
 
   const handleRegister = () => {
