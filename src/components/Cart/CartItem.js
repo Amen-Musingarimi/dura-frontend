@@ -2,6 +2,7 @@ import classes from './CartItem.module.css';
 
 const CartItem = (props) => {
   const price = parseFloat(props.price);
+console.log(props.measurementUnit)
 
   return (
     <li className={classes['cart-item']}>
