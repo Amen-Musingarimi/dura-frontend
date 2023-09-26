@@ -13,6 +13,7 @@ const Header = (props) => {
   const dispatch = useDispatch();
   const isOpen = useSelector((state) => state.nav.isOpen);
   const isAuthenticated = useSelector((state) => state.auth.token !== null);
+  const [isBackdropVisible, setIsBackdropVisible] = useState(false);
 
   const user = getLocalStorage('user');
   const userEmail = user && user.email;
@@ -27,6 +28,7 @@ const Header = (props) => {
 
   const handleNav = () => {
     dispatch(toggleNav());
+    setIsBackdropVisible(!isBackdropVisible);
   };
 
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024);
@@ -60,6 +62,7 @@ const Header = (props) => {
 
   return (
     <header className={classes.header}>
+      {isBackdropVisible && <div className={classes.backdrop} onClick={handleNav} />}
       <div className={classes.logoCont}>
         <h3 className={classes.logo}>
           D<span className={classes.logoStling}>U</span>R
