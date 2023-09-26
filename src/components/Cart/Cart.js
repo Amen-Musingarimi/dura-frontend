@@ -15,25 +15,32 @@ import classes from './Cart.module.css';
 
 const Cart = (props) => {
   const dispatch = useDispatch();
-  const products = useSelector((state) => state.product.products);
   const cartItems = useSelector((state) => {
-    return state.cart.items.map((item) => {
-      const product = products.find(
-        (product) => product.id === item.product_id
-      );
-      return {
-        ...item,
-        name: product.name,
-        price: product.price,
-      };
-    });
+    const products = state.product.products;
+    const cartItems = state.cart.items;
+  
+    const groupedItems = cartItems.reduce((acc, item) => {
+      const existingItem = acc.find((i) => i.product_id === item.product_id);
+      if (existingItem) {
+        existingItem.quantity += item.quantity;
+      } else {
+        const product = products.find((p) => p.id === item.product_id);
+        acc.push({
+          ...item,
+          name: product.name,
+          price: product.price,
+        });
+      }
+      return acc;
+    }, []);
+  
+    return groupedItems;
   });
 
   useEffect(() => {
     dispatch(fetchCart());
   }, [dispatch]);
 
-  console.log(cartItems);
   const isAuthenticated = useSelector((state) => state.auth.token !== null);
   const user = getLocalStorage('user');
   const navigate = useNavigate();

@@ -7,7 +7,6 @@ import { fetchCart } from '../../redux/cartSlice';
 const HeaderCartButton = (props) => {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.items);
-  console.log(cartItems)
 
   useEffect(() => {
     dispatch(fetchCart());
