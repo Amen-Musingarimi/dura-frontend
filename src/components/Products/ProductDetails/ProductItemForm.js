@@ -1,10 +1,13 @@
 import { useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Input from '../../UI/Input';
 import classes from './ProductItemForm.module.css';
 
 const ProductItemForm = (props) => {
   const [amountIsValid, setAmountIsValid] = useState(true);
   const amountInputRef = useRef();
+
+  const navigate = useNavigate()
 
   const submitHandler = (event) => {
     event.preventDefault();
@@ -18,6 +21,7 @@ const ProductItemForm = (props) => {
     }
 
     props.onAddToCart(enteredAmountNumber);
+    navigate('/products')
   };
 
   return (
@@ -38,7 +42,7 @@ const ProductItemForm = (props) => {
           }}
         />
       </div>
-      <button>+ Add</button>
+      <button className={classes.addToCartBtn}>+ Add To Cart</button>
       {!amountIsValid && <p>Please enter a valid amount.</p>}
     </form>
   );
