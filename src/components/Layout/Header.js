@@ -4,6 +4,7 @@ import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { toggleNav } from '../../redux/navBarSlice';
 import { getLocalStorage } from '../helpers/localStorage';
+import { fetchCart } from '../../redux/cartSlice';
 import HeaderCartButton from './HeaderCartButton';
 import { logOutUser, toRegister } from '../../redux/authenticationSlice';
 import classes from './Header.module.css';
@@ -20,6 +21,7 @@ const Header = (props) => {
 
   const handleLogout = () => {
     dispatch(logOutUser());
+    dispatch(fetchCart());
     navigate('/');
   };
 
@@ -63,7 +65,9 @@ const Header = (props) => {
           D<span className={classes.logoStling}>U</span>R
           <span className={classes.logoStling}>A</span>
         </h3>
-        <HeaderCartButton onClick={props.onClick} />
+        {isAuthenticated && user && (
+          <HeaderCartButton onClick={props.onClick} />
+        )}
       </div>
       <nav style={isMobile ? navStyle : {}} className={classes.nav}>
         <NavLink
