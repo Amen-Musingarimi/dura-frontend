@@ -55,6 +55,15 @@ export const removeItemAsync = createAsyncThunk(
   }
 );
 
+// Async action for clearing the cart
+export const clearCartAsync = createAsyncThunk('cart/clearCart', async () => {
+  const token = getLocalStorage('token');
+  const cart_id = getLocalStorage('cart_id');
+  await axios.delete(`http://localhost:3000/carts/${cart_id}/destroy_all`, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+});
+
 const cartSlice = createSlice({
   name: 'cart',
   initialState: {
@@ -63,9 +72,6 @@ const cartSlice = createSlice({
     error: null,
   },
   reducers: {
-    clearCart: (state) => {
-      state.items = [];
-    },
   },
   extraReducers: (builder) => {
     builder
@@ -99,9 +105,12 @@ const cartSlice = createSlice({
         if (index !== -1) {
           state.items.splice(index, 1);
         }
+      })
+      .addCase(clearCartAsync.fulfilled, (state) => {
+        state.items = [];
       });
   },
 });
 
-export const { clearCart } = cartSlice.actions;
+
 export default cartSlice.reducer;

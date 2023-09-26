@@ -7,7 +7,7 @@ import { AiOutlineClose } from 'react-icons/ai';
 import {
   removeItemAsync,
   updateItemAsync,
-  clearCart,
+  clearCartAsync,
   fetchCart,
 } from '../../redux/cartSlice';
 import { useNavigate } from 'react-router-dom';
@@ -69,7 +69,7 @@ const Cart = (props) => {
   };
 
   const clearCartHandler = () => {
-    dispatch(clearCart());
+    dispatch(clearCartAsync());
     props.onClose();
   };
 
