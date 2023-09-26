@@ -14,6 +14,7 @@ const Header = (props) => {
   const isAuthenticated = useSelector((state) => state.auth.token !== null);
 
   const user = getLocalStorage('user');
+  const userEmail = user && user.email;
 
   const navigate = useNavigate();
 
@@ -98,6 +99,7 @@ const Header = (props) => {
         >
           TRANSACTIONS
         </NavLink>
+        {isAuthenticated && userEmail === 'takudzwamusinga@gmail.com' && (
         <NavLink
           to="/admin"
           exact={true.toString()}
@@ -106,6 +108,7 @@ const Header = (props) => {
         >
           ADMIN
         </NavLink>
+        )}
         <section className={classes.navAuthWrapper}>
           {!isAuthenticated && (
             <Link to="/auth">
