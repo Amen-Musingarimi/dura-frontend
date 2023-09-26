@@ -1,11 +1,14 @@
 import { useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
 import Input from '../../UI/Input';
 import classes from './ProductItemForm.module.css';
 
 const ProductItemForm = (props) => {
   const [amountIsValid, setAmountIsValid] = useState(true);
   const amountInputRef = useRef();
+
+  const isAuthenticated = useSelector((state) => state.auth.token !== null);
 
   const navigate = useNavigate()
 
@@ -42,7 +45,12 @@ const ProductItemForm = (props) => {
           }}
         />
       </div>
-      <button className={classes.addToCartBtn}>+ Add To Cart</button>
+      {!isAuthenticated && (
+        <Link to='/auth'>Log In To Start Buying</Link>
+      )}
+       {isAuthenticated && (       
+       <button className={classes.addToCartBtn}>+ Add To Cart</button>
+      )}
       {!amountIsValid && <p>Please enter a valid amount.</p>}
     </form>
   );

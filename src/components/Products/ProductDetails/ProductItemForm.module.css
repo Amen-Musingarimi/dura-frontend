@@ -23,7 +23,7 @@
   border-radius: 8px;
 }
 
-.form button {
+.form button, .form a {
   font: inherit;
   cursor: pointer;
   background-color: #141c42;
@@ -32,6 +32,16 @@
   border: none;
   border-radius: 20px;
   font-weight: 500;
+}
+
+.form a {
+  font: inherit;
+  text-decoration: none;
+  text-align: center;
+}
+
+.form a:hover {
+  background-color: #1e2a68;
 }
 
 .form button:hover,
