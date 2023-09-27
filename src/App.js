@@ -10,6 +10,7 @@ import Cart from './components/Cart/Cart';
 import Footer from './components/Footer/Footer';
 import ContactButton from './components/contact/ContactButton';
 import AddProduct from './components/Admin/AddProduct';
+import PurchaseHistoryList from './components/histrory/PurchaseHistoryList';
 import './App.css';
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
           <Route path="/about" index element={<About />} />
           <Route exact path="/auth" element={<Authentication />} />
           <Route exact path="/admin" element={<AddProduct />} />
+          <Route exact path="/transactions" element={<PurchaseHistoryList />} />
         </Routes>
       </main>
       <ContactButton />
