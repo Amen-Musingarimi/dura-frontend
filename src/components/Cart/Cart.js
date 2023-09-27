@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Modal from '../UI/Modal';
 import CartItem from './CartItem';
-import { getLocalStorage } from '../helpers/localStorage';
 import { AiOutlineClose } from 'react-icons/ai';
 import {
   removeItemAsync,

@@ -26,6 +26,9 @@ const PurchaseHistoryList = () => {
 
   // Helper function to group purchase history by date and time
   const groupPurchaseHistoryByTimestamp = (data) => {
+    if (!Array.isArray(data)) {
+      return [];
+    }
     const groupedData = {};
     data.forEach((item) => {
       const timestamp = formatTimestamp(item.created_at);
@@ -62,42 +65,27 @@ const PurchaseHistoryList = () => {
           return (
             <div key={timestamp} className={classes.card}>
               <p className={classes.transactionDate}>{timestamp}</p>
-              {Object.keys(cardProducts).map((productId) => {
-                const product = cardProducts[productId];
-                return (
-                  <div key={productId} className={classes.productDetails}>
-                    <div className={classes.productNameCont}>
-                      <h4 className={classes.productName}>{product.name}</h4>
-                      <span>|</span>
-                      <h4 className={classes.productName}>
-                        {product.english_name}
-                      </h4>
-                    </div>
-                    <table className={classes.orderTextDetailsTable}>
-                      <tr>
-                        <th className={classes.tableHeading}>
-                          Price/{product.measurement_unit}
-                        </th>
-                        <th className={classes.tableHeading}>
-                          Quantity({product.measurement_unit})
-                        </th>
-                        <th className={classes.tableHeading}>
-                          Total Product Price($)
-                        </th>
-                      </tr>
-                      <tr>
-                        <td className={classes.tableData}>${product.price}</td>
-                        <td className={classes.tableData}>
-                          {product.quantity}
-                        </td>
-                        <td className={classes.tableData}>
-                          ${(product.price * product.quantity).toFixed(2)}
-                        </td>
-                      </tr>
-                    </table>
-                  </div>
-                );
-              })}
+              <table className={classes.orderTextDetailsTable}>
+                <tr>
+                  <th className={classes.tableHeading}>Product</th>
+                  <th className={classes.tableHeading}>Price/unit</th>
+                  <th className={classes.tableHeading}>Quantity</th>
+                  <th className={classes.tableHeading}>Total($)</th>
+                </tr>
+                {Object.keys(cardProducts).map((productId) => {
+                  const product = cardProducts[productId];
+                  return (
+                    <tr>
+                      <td className={classes.tableData}>{product.name}</td>
+                      <td className={classes.tableData}>${product.price}</td>
+                      <td className={classes.tableData}>{product.quantity}</td>
+                      <td className={classes.tableData}>
+                        ${(product.price * product.quantity).toFixed(2)}
+                      </td>
+                    </tr>
+                  );
+                })}
+              </table>
               <p className={classes.transactionTotalPrice}>
                 Total Order Price:
                 <span className={classes.orderPrice}>
