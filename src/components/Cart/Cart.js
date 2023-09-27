@@ -11,6 +11,7 @@ import {
   fetchCart,
 } from '../../redux/cartSlice';
 import { getProductsAsync } from '../../redux/productsSlice';
+import { createPurchaseHistoryAsync } from '../../redux/transactionsSlice';
 import { useNavigate } from 'react-router-dom';
 import classes from './Cart.module.css';
 
@@ -41,12 +42,13 @@ const Cart = (props) => {
   }, [dispatch]);
 
   const isAuthenticated = useSelector((state) => state.auth.token !== null);
-  const user = getLocalStorage('user');
   const navigate = useNavigate();
 
   const orderHandler = () => {
-    if (isAuthenticated & user) {
-      console.log('User is authenticated. Implement the order logic here.');
+    if (isAuthenticated) {
+      dispatch(createPurchaseHistoryAsync());
+      dispatch(fetchCart());
+      props.onClose();
     } else {
       navigate('/auth');
       props.onClose();
