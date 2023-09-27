@@ -3,6 +3,7 @@ import grainsImage from '../../assets/Types-of-Grains.webp';
 import AboutSummary from '../home/AboutSummary';
 import WhyUs from '../home/WhyUs';
 import Faqs from '../home/Faqs';
+import Testimonials from '../home/Testimonials';
 import classes from './About.module.css';
 
 const About = () => {
@@ -18,6 +19,7 @@ const About = () => {
       <AboutSummary />
       <WhyUs />
       <Faqs />
+      <Testimonials />
     </div>
   );
 };

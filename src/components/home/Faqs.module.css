@@ -36,7 +36,7 @@
   flex-direction: column;
   justify-content: flex-start;
   gap: 1rem;
-  padding: 1rem 2rem;
+  padding: 1rem;
   width: 100%;
   border-bottom: 1px solid #d3d3d3;
 }
@@ -50,8 +50,8 @@
 }
 
 .cardName {
-  font-size: 1.2rem;
-  font-weight: 700;
+  font-size: 0.95rem;
+  font-weight: 600;
   margin: 0;
   padding: 0;
 }
@@ -74,7 +74,7 @@
 
 .cardDescription {
   line-height: 1.5rem;
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   font-weight: 500;
   color: #636262;
   margin: 0;
