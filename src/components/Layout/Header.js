@@ -100,14 +100,16 @@ const Header = (props) => {
         >
           ABOUT
         </NavLink>
-        <NavLink
-          to="/transactions"
-          exact={true.toString()}
-          className={classes.navLinks}
-          onClick={handleNav}
-        >
-          TRANSACTIONS
-        </NavLink>
+        {isAuthenticated && (
+          <NavLink
+            to="/transactions"
+            exact={true.toString()}
+            className={classes.navLinks}
+            onClick={handleNav}
+          >
+            TRANSACTIONS
+          </NavLink>
+        )}
         {isAuthenticated && userEmail === 'takudzwamusinga@gmail.com' && (
           <NavLink
             to="/admin"
