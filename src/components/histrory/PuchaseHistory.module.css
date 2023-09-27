@@ -51,29 +51,6 @@
   padding: 0;
 }
 
-.productDetails {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 1rem;
-  width: 100%;
-}
-
-.productNameCont {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 2rem;
-}
-
-.productName {
-  font-size: 0.9rem;
-  font-weight: 600;
-  padding: 0;
-  margin: 0;
-}
-
 .tableHeading {
   font-size: 0.9rem;
   font-weight: 600;
@@ -84,6 +61,7 @@
   color: #da480e;
   font-size: 0.9rem;
   font-weight: 500;
+  padding-bottom: 0.5rem;
 }
 
 .transactionTotalPrice {
@@ -112,5 +90,11 @@
     justify-content: flex-start;
     align-items: center;
     gap: 2rem;
+    width: 100%;
+  }
+
+  .card {
+    width: 98%;
+    padding: 1rem;
   }
 }
