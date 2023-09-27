@@ -9,6 +9,7 @@ import {
   clearErrors,
 } from '../../redux/authenticationSlice';
 import { fetchCart } from '../../redux/cartSlice';
+import { getProductsAsync } from '../../redux/productsSlice';
 import classes from './Authentication.module.css';
 
 const Authentication = () => {
@@ -42,6 +43,7 @@ const Authentication = () => {
     e.preventDefault();
 
     dispatch(logInUser({ email, password }));
+    dispatch(getProductsAsync());
     dispatch(fetchCart());
   };
 

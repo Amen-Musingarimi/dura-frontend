@@ -10,12 +10,19 @@ import {
   clearCartAsync,
   fetchCart,
 } from '../../redux/cartSlice';
+import { getProductsAsync } from '../../redux/productsSlice';
 import { useNavigate } from 'react-router-dom';
 import classes from './Cart.module.css';
 
 const Cart = (props) => {
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getProductsAsync());
+  }, [dispatch]);
+
   const products = useSelector((state) => state.product.products);
+
   const cartItems = useSelector((state) => {
     return state.cart.items.map((item) => {
       const product = products.find(

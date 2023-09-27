@@ -9,13 +9,13 @@ export const fetchCart = createAsyncThunk('cart/fetchCart', async () => {
   const response = await axios.get(`http://localhost:3000/carts/${cart_id}`, {
     headers: { Authorization: `Bearer ${token}` },
   });
-   const responceData = response.data
+  const responceData = response.data;
 
-   const cart = responceData
-   
-   const { cart_items } = responceData
-   
-   return {cart, cart_items};
+  const cart = responceData;
+
+  const { cart_items } = responceData;
+
+  return { cart, cart_items };
 });
 
 // Async action for adding an item to the cart
@@ -71,8 +71,7 @@ const cartSlice = createSlice({
     status: 'idle',
     error: null,
   },
-  reducers: {
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(fetchCart.pending, (state) => {

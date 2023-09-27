@@ -62,7 +62,9 @@ const Header = (props) => {
 
   return (
     <header className={classes.header}>
-      {isBackdropVisible && <div className={classes.backdrop} onClick={handleNav} />}
+      {isBackdropVisible && (
+        <div className={classes.backdrop} onClick={handleNav} />
+      )}
       <div className={classes.logoCont}>
         <h3 className={classes.logo}>
           D<span className={classes.logoStling}>U</span>R
@@ -107,14 +109,14 @@ const Header = (props) => {
           TRANSACTIONS
         </NavLink>
         {isAuthenticated && userEmail === 'takudzwamusinga@gmail.com' && (
-        <NavLink
-          to="/admin"
-          exact={true.toString()}
-          className={classes.navLinks}
-          onClick={handleNav}
-        >
-          ADMIN
-        </NavLink>
+          <NavLink
+            to="/admin"
+            exact={true.toString()}
+            className={classes.navLinks}
+            onClick={handleNav}
+          >
+            ADMIN
+          </NavLink>
         )}
         <section className={classes.navAuthWrapper}>
           {!isAuthenticated && (
