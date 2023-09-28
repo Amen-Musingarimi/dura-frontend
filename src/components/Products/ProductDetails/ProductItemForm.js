@@ -10,7 +10,7 @@ const ProductItemForm = (props) => {
 
   const isAuthenticated = useSelector((state) => state.auth.token !== null);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const submitHandler = (event) => {
     event.preventDefault();
@@ -23,8 +23,14 @@ const ProductItemForm = (props) => {
       return;
     }
 
+    // Check if entered quantity is greater than total_units
+    if (enteredAmountNumber > props.totalUnits) {
+      setAmountIsValid(false);
+      return;
+    }
+
     props.onAddToCart(enteredAmountNumber);
-    navigate('/products')
+    navigate('/products');
   };
 
   return (
@@ -45,13 +51,17 @@ const ProductItemForm = (props) => {
           }}
         />
       </div>
-      {!isAuthenticated && (
-        <Link to='/auth'>Log In To Start Buying</Link>
+      {!amountIsValid && (
+        <p className={classes.outOfStockMessage}>
+          Sorry we're only left with {props.totalUnits}
+          {props.measurementUnit} in stock. Choose a quantity less than or equal
+          to that.
+        </p>
       )}
-       {isAuthenticated && (       
-       <button className={classes.addToCartBtn}>+ Add To Cart</button>
+      {!isAuthenticated && <Link to="/auth">Log In To Start Buying</Link>}
+      {isAuthenticated && (
+        <button className={classes.addToCartBtn}>+ Add To Cart</button>
       )}
-      {!amountIsValid && <p>Please enter a valid amount.</p>}
     </form>
   );
 };

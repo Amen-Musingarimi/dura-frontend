@@ -7,8 +7,8 @@ import ProductItemForm from './ProductItemForm';
 import Card from '../../UI/Card';
 import classes from './ProductDetails.module.css';
 
-const findFoodById = (foodArray, id) => {
-  return foodArray.find((item) => item.id === id);
+const findProductById = (productArray, id) => {
+  return productArray.find((item) => item.id === id);
 };
 
 const ProductDetails = () => {
@@ -16,7 +16,7 @@ const ProductDetails = () => {
   const dispatch = useDispatch();
 
   const { products, status } = useSelector((state) => state.product);
-  const foundProduct = findFoodById(products, parseInt(id));
+  const foundProduct = findProductById(products, parseInt(id));
 
   useEffect(() => {
     if (status === 'idle') {
@@ -44,42 +44,40 @@ const ProductDetails = () => {
     );
   }
 
-  if (foundProduct) {
-    const imageUrl = foundProduct.image
-      ? `data:${foundProduct.image.content_type};base64,${foundProduct.image.data}`
-      : '';
+  const imageUrl = foundProduct.image
+    ? `data:${foundProduct.image.content_type};base64,${foundProduct.image.data}`
+    : '';
 
-    return (
-      <Card>
-        <div className={classes.productDetailsContainer}>
-          <img src={imageUrl} alt="ProductImage" />
-          <div className={classes.productTextContainer}>
-            <div className={classes.productNames}>
-              <h3>{foundProduct.name}</h3>
-              <span> | </span>
-              <h3>{foundProduct.english_name}</h3>
-            </div>
-            <p className={classes.productPrice}>${foundProduct.price}</p>
-            <p className={classes.productAvailability}>
-              Availability <span>: {availabilityText}</span>
-            </p>
-            <div className={classes.border}></div>
-            <p className={classes.productDescription}>
-              {foundProduct.description}
-            </p>
-            <div className={classes.cartForm}>
-              <ProductItemForm
-                id={foundProduct.id}
-                onAddToCart={addToCartHandler}
-              />
-            </div>
+  return (
+    <Card>
+      <div className={classes.productDetailsContainer}>
+        <img src={imageUrl} alt="ProductImage" />
+        <div className={classes.productTextContainer}>
+          <div className={classes.productNames}>
+            <h3>{foundProduct.name}</h3>
+            <span> | </span>
+            <h3>{foundProduct.english_name}</h3>
+          </div>
+          <p className={classes.productPrice}>${foundProduct.price}</p>
+          <p className={classes.productAvailability}>
+            Availability <span>: {availabilityText}</span>
+          </p>
+          <div className={classes.border}></div>
+          <p className={classes.productDescription}>
+            {foundProduct.description}
+          </p>
+          <div className={classes.cartForm}>
+            <ProductItemForm
+              id={foundProduct.id}
+              totalUnits={foundProduct.total_units}
+              onAddToCart={addToCartHandler}
+              measurementUnit={foundProduct.measurement_unit}
+            />
           </div>
         </div>
-      </Card>
-    );
-  }
-
-  return <div>Product not found</div>;
+      </div>
+    </Card>
+  );
 };
 
 export default ProductDetails;
