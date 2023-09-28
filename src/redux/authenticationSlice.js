@@ -40,7 +40,7 @@ export const logInUser = createAsyncThunk(
 
       return { token, cart_id, user, error };
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.response.data.error);
+      return thunkAPI.rejectWithValue('Invalid name or password!');
     }
   }
 );
