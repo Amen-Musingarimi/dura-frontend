@@ -76,7 +76,7 @@ const AddProduct = () => {
         <div className={classes.numberInputs}>
           <input
             type="number"
-            className={classes.input}
+            className={`${classes.input} ${classes.numberInput}`}
             placeholder="Price/Unit in USD"
             name="price"
             onChange={(e) => setPrice(e.target.value)}
