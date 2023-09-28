@@ -21,3 +21,10 @@
   font-size: 1rem;
   font-weight: 500;
 }
+
+@media only screen and (max-width: 768px) {
+  .summary {
+    margin-top: 2rem;
+    width: 90%;
+  }
+}
