@@ -47,7 +47,7 @@ const PurchaseHistoryList = () => {
 
   return (
     <div className={classes.historyContainer}>
-      <h3 className={classes.sectionHeading}>Your Transactions Here</h3>
+      <h3 className={classes.sectionHeading}>Your Orders</h3>
       <div className={classes.historyCardsContainer}>
         {Object.keys(groupedPurchaseHistory).map((timestamp) => {
           const cardData = groupedPurchaseHistory[timestamp];

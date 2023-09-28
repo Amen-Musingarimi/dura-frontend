@@ -46,6 +46,10 @@ const AddProduct = () => {
   return (
     <div className={classes.addProducContainer}>
       <h2 className={classes.containerHeading}>Add A Product</h2>
+      <p className={classes.importantNote}>
+        NB: Note that you can only add new product. If you add an existing
+        product, its delails will be updated with the new details you add here.
+      </p>
       <form action="submit" className="add-hotel-form" onSubmit={handleSubmit}>
         <input
           type="text"
@@ -85,7 +89,7 @@ const AddProduct = () => {
           />
           <input
             type="text"
-            className={classes.input}
+            className={`${classes.input} ${classes.numberInput}`}
             placeholder="Measurement Unit"
             name="measurement_unit"
             onChange={(e) => setMeasurementUnit(e.target.value)}
@@ -94,7 +98,7 @@ const AddProduct = () => {
           />
           <input
             type="number"
-            className={classes.input}
+            className={`${classes.input} ${classes.numberInput}`}
             placeholder="Total Units"
             name="units"
             onChange={(e) => setTotalUnits(e.target.value)}

@@ -13,6 +13,12 @@
   box-shadow: 0 1px 18px 10px rgba(0, 0, 0, 0.25);
 }
 
+.importantNote {
+  font-size: 0.9rem;
+  color: #da480e;
+  font-weight: 500;
+}
+
 .addProducContainer form {
   display: flex;
   flex-direction: column;
@@ -72,21 +78,21 @@
   background-color: #1a3092;
 }
 
-@media only screen and (max-width: 1024px) {
-  .authFormsContainter {
-    margin-top: 12rem;
-    margin-bottom: 0;
-  }
-
-  .navigateBtn,
-  .registerBtn {
+@media only screen and (max-width: 760px) {
+  .numberInputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.9rem;
     width: 100%;
   }
-}
 
-@media only screen and (max-width: 760px) {
-  .authFormsContainter {
-    margin-top: 6.5rem;
-    margin-bottom: 0;
+  .numberInput {
+    width: 100%;
+  }
+
+  .imageContainer {
+    flex-direction: column;
   }
 }
