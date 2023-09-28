@@ -70,9 +70,7 @@ const Header = (props) => {
           D<span className={classes.logoStling}>U</span>R
           <span className={classes.logoStling}>A</span>
         </h3>
-        {isAuthenticated && user && (
-          <HeaderCartButton onClick={props.onClick} />
-        )}
+        {isAuthenticated && <HeaderCartButton onClick={props.onClick} />}
       </div>
       <nav style={isMobile ? navStyle : {}} className={classes.nav}>
         <NavLink

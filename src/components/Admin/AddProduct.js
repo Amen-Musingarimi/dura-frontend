@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router';
-import { addProductAsync } from '../../redux/productsSlice';
+import { addProductAsync, getProductsAsync } from '../../redux/productsSlice';
 import classes from './AddProduct.module.css';
 
 const AddProduct = () => {
@@ -35,6 +35,7 @@ const AddProduct = () => {
     };
 
     dispatch(addProductAsync(newProduct));
+    dispatch(getProductsAsync());
     navigate('/products', {
       state: {
         directAccess: false,
