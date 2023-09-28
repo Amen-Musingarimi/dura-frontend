@@ -33,6 +33,9 @@ const ProductDetails = () => {
     );
   };
 
+  const availabilityText =
+    foundProduct.total_units > 1 ? 'In Stock' : 'Out Of Stock';
+
   if (!foundProduct) {
     return (
       <div className={classes.loadingText}>
@@ -58,7 +61,7 @@ const ProductDetails = () => {
             </div>
             <p className={classes.productPrice}>${foundProduct.price}</p>
             <p className={classes.productAvailability}>
-              Availability <span>: In Stock</span>
+              Availability <span>: {availabilityText}</span>
             </p>
             <div className={classes.border}></div>
             <p className={classes.productDescription}>
