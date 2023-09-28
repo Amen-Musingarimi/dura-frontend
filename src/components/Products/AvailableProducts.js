@@ -21,6 +21,7 @@ const AvailableProducts = () => {
       description={prod.description}
       image={prod.image}
       price={prod.price}
+      quantity={prod.total_units}
       unit={prod.measurement_unit}
     />
   ));
