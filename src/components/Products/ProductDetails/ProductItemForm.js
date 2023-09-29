@@ -1,5 +1,6 @@
-import { useRef, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useRef, useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchCart } from '../../../redux/cartSlice';
 import { Link, useNavigate } from 'react-router-dom';
 import Input from '../../UI/Input';
 import classes from './ProductItemForm.module.css';
@@ -11,6 +12,11 @@ const ProductItemForm = (props) => {
   const isAuthenticated = useSelector((state) => state.auth.token !== null);
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchCart());
+  }, [dispatch]);
 
   const submitHandler = (event) => {
     event.preventDefault();
@@ -30,6 +36,7 @@ const ProductItemForm = (props) => {
     }
 
     props.onAddToCart(enteredAmountNumber);
+    dispatch(fetchCart());
     navigate('/products');
   };
 
