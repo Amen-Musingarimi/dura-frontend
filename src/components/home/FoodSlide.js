@@ -43,11 +43,6 @@ const FoodSlide = () => {
     );
   }
 
-  const imageUrl =
-    currentCard && currentCard.image
-      ? `data:${currentCard.image.content_type};base64,${currentCard.image.data}`
-      : '';
-
   return (
     <div className={classes.sliderContainer}>
       <button className={classes.sliderBtn} onClick={previousCard}>
@@ -56,7 +51,7 @@ const FoodSlide = () => {
       <div className={classes.sliderCard}>
         <div className={classes.imageNameWrapper}>
           <img
-            src={imageUrl}
+            src={currentCard.image_url}
             alt="ProductImage"
             className={classes.productImage}
           />

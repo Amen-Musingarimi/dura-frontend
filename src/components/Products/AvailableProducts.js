@@ -19,7 +19,7 @@ const AvailableProducts = () => {
       name={prod.name}
       englishName={prod.english_name}
       description={prod.description}
-      image={prod.image}
+      image={prod.image_url}
       price={prod.price}
       quantity={prod.total_units}
       unit={prod.measurement_unit}

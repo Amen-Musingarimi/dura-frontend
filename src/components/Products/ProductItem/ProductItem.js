@@ -9,15 +9,11 @@ const ProductItem = (props) => {
   const user = getLocalStorage('user');
   const userEmail = user && user.email;
 
-  const imageUrl = props.image
-    ? `data:${props.image.content_type};base64,${props.image.data}`
-    : '';
-
   return (
     <li className={classes.mealWrapper}>
       <Link to={`/products/${props.id}`} className={classes.meal}>
         <img
-          src={imageUrl}
+          src={props.image}
           alt="ProductImage"
           className={classes.productImage}
         />

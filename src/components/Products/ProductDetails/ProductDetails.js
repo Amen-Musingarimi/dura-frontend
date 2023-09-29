@@ -44,14 +44,10 @@ const ProductDetails = () => {
     );
   }
 
-  const imageUrl = foundProduct.image
-    ? `data:${foundProduct.image.content_type};base64,${foundProduct.image.data}`
-    : '';
-
   return (
     <Card>
       <div className={classes.productDetailsContainer}>
-        <img src={imageUrl} alt="ProductImage" />
+        <img src={foundProduct.image_url} alt="ProductImage" />
         <div className={classes.productTextContainer}>
           <div className={classes.productNames}>
             <h3>{foundProduct.name}</h3>
