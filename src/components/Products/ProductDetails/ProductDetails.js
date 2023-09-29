@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { addItemAsync } from '../../../redux/cartSlice';
@@ -18,11 +18,17 @@ const ProductDetails = () => {
   const { products, status } = useSelector((state) => state.product);
   const foundProduct = findProductById(products, parseInt(id));
 
+  const [isLoading, setIsLoading] = useState(!foundProduct);
+
   useEffect(() => {
-    if (status === 'idle') {
-      dispatch(getProductsAsync());
-    }
+    dispatch(getProductsAsync());
   }, [status, dispatch]);
+
+  useEffect(() => {
+    if (foundProduct) {
+      setIsLoading(false);
+    }
+  }, [foundProduct]);
 
   const addToCartHandler = (quantity) => {
     dispatch(
@@ -33,16 +39,24 @@ const ProductDetails = () => {
     );
   };
 
-  const availabilityText =
-    foundProduct.total_units > 1 ? 'In Stock' : 'Out Of Stock';
-
-  if (!foundProduct) {
+  if (isLoading) {
     return (
       <div className={classes.loadingText}>
         <p>Loading...</p>
       </div>
     );
   }
+
+  if (!foundProduct) {
+    return (
+      <div className={classes.errorText}>
+        <p>Product not found.</p>
+      </div>
+    );
+  }
+
+  const availabilityText =
+    foundProduct.total_units > 1 ? 'In Stock' : 'Out Of Stock';
 
   return (
     <Card>

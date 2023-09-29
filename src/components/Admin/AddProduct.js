@@ -14,13 +14,7 @@ const AddProduct = () => {
   const [price, setPrice] = useState(null);
   const [measurementUnit, setMeasurementUnit] = useState('');
   const [totalUnits, setTotalUnits] = useState(null);
-  const [image, setImage] = useState(null);
-
-  const handleFileChange = (e) => {
-    if (e.target.files.length > 0) {
-      setImage(e.target.files[0]);
-    }
-  };
+  const [image, setImage] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -105,21 +99,15 @@ const AddProduct = () => {
             value={totalUnits}
             required
           />
-        </div>
-        <div className={classes.imageContainer}>
           <input
-            type="file"
-            className={classes.imageInput}
-            onChange={handleFileChange}
+            type="text"
+            className={`${classes.input} ${classes.numberInput}`}
+            placeholder="Product Image URL"
+            onChange={(e) => setImage(e.target.value)}
+            value={image}
+            name="image"
             required
           />
-          {image && (
-            <img
-              src={URL.createObjectURL(image)}
-              alt="Preview"
-              style={{ maxWidth: '200px', marginTop: '10px' }}
-            />
-          )}
         </div>
         <button type="submit" className={classes.addProductBtn}>
           Add Product

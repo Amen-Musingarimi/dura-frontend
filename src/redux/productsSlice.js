@@ -21,7 +21,7 @@ export const addProductAsync = createAsyncThunk(
       formData.append('product[price]', newProduct.price);
       formData.append('product[measurement_unit]', newProduct.measurementUnit);
       formData.append('product[total_units]', newProduct.totalUnits);
-      formData.append('product[image]', newProduct.image);
+      formData.append('product[image_url]', newProduct.image);
 
       const response = await fetch('http://localhost:3000/products', {
         method: 'POST',
@@ -32,6 +32,7 @@ export const addProductAsync = createAsyncThunk(
       });
 
       const data = await response.json();
+      console.log(data);
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.response.data);
