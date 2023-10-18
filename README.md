@@ -17,13 +17,13 @@
   - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
   - [⭐️ Show your support ](#️-show-your-support-)
-  - [� License ](#-license-)
+  - [📝 License ](#-license-)
 
 <!-- PROJECT DESCRIPTION -->
 
 # 📖 [Dura] <a name="about-project"></a>
 
-**[Dura]** Dura is an app that empowers users to explore and purchase authentic Zimbabwean traditional foods, creating a bridge to cultural heritage. It offers a seamless and user-friendly experience, connecting food enthusiasts with the flavors of Zimbabwe.
+**[Dura]** Dura is an intuative app that empowers users to explore and purchase authentic Zimbabwean traditional foods, creating a bridge to cultural heritage. It offers a seamless and user-friendly experience, connecting food enthusiasts with the flavors of Zimbabwe.
 
 ## 🛠 Built With <a name="built-with"></a>
 
