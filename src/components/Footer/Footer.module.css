@@ -1,0 +1,141 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+  background-color: #19255f;
+  color: #fff;
+  padding: 2rem;
+  width: 100%;
+}
+
+.sectionHeading {
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.detailsContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 4rem;
+  width: 100%;
+}
+
+.heading {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.firstDiv,
+.addressDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.firstDiv {
+  gap: 1rem;
+}
+
+.addressDiv {
+  gap: 3rem;
+}
+
+.orderLink {
+  background-color: #fff;
+  color: #19255f;
+  padding: 0.7rem 1.4rem;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 500;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.orderLink:hover {
+  cursor: pointer;
+  box-shadow: 4px 4px 8px rgba(199, 199, 199, 0.959);
+  font-size: 1.1rem;
+}
+
+.street {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.physicalAddress a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.physicalAddress a:hover {
+  color: #da480e;
+}
+
+.physicalAddress h3,
+.physicalAddress p {
+  margin: 0;
+  padding: 0;
+}
+
+.physicalAddress {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.socialLinks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icon {
+  font-size: 1.5rem;
+}
+
+.copyrightsDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 1rem;
+  width: 100%;
+  border-top: 1px solid #da480e;
+}
+
+.copyrightsText,
+.linkedInLink {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.linkedInLink {
+  text-decoration: none;
+  color: #fff;
+}
+
+.linkedInLink:hover {
+  color: #da480e;
+}
+
+@media only screen and (max-width: 768px) {
+  .sectionHeading {
+    text-align: start;
+  }
+
+  .detailsContainer {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 2rem;
+  }
+}

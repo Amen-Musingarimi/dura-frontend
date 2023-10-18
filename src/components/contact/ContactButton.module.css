@@ -1,0 +1,17 @@
+.contactButton {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 0.1rem;
+  background-color: #141c42;
+  opacity: 0.9;
+  border: none;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 8px;
+}
+
+.contactButton:hover {
+  background-color: #233174;
+}

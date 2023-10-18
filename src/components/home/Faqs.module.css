@@ -1,0 +1,88 @@
+.faqsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4rem;
+  color: #19255f;
+  width: 100%;
+  padding: 0 2%;
+}
+
+.sectionHeading {
+  font-size: 1.8rem;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #da480e;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  box-shadow: 8px 8px 0px 0px rgb(218, 72, 14, 1);
+}
+
+.faqCardsContainer {
+  width: 80%;
+  border: 1px solid #19255f;
+  border-radius: 10px;
+  box-shadow: 6px 6px 0px 0px rgba(34, 32, 83, 1);
+}
+
+.faqCard:last-child {
+  border-top: none;
+}
+
+.faqCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  width: 100%;
+  border-bottom: 1px solid #d3d3d3;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+}
+
+.cardName {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+}
+
+.toogleDetailsBtn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: #da480e;
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.2rem;
+  text-align: center;
+  border-radius: 50%;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.cardDescription {
+  line-height: 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #636262;
+  margin: 0;
+  padding: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .faqCardsContainer {
+    width: 100%;
+  }
+}

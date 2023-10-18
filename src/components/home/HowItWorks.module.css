@@ -1,0 +1,105 @@
+.sectionContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5rem;
+  width: 100%;
+  color: #19255f;
+  padding-bottom: 4rem;
+}
+
+.sectionHeading {
+  font-size: 1.8rem;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #da480e;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  box-shadow: 8px 8px 0px 0px rgb(218, 72, 14, 1);
+}
+
+.instructionCont {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 4rem;
+}
+
+.stepNumber {
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: #da480e;
+}
+
+.instructionCard {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.cardDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 15rem;
+  height: 10rem;
+  padding: 1rem;
+  border: 1px solid #d3d3d3;
+  border-radius: 8px;
+  background-color: #19255f;
+  color: #fff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.icon {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.cardInstruction {
+  font-size: 0.9rem;
+  line-height: 1.5rem;
+}
+
+.signInRedirectBtn {
+  text-decoration: none;
+  color: #fff;
+  background-color: #da480e;
+  padding: 0.8rem 1.6rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 6px 6px 0px 0px rgba(34, 32, 83, 1);
+}
+
+.signInRedirectBtn:hover {
+  font-size: 1rem;
+  border: 1px solid #da480e;
+  background-color: #19255f;
+}
+
+@media only screen and (max-width: 1024px) {
+  .instructionCont {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .sectionContainer {
+    gap: 2rem;
+  }
+
+  .instructionCont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+}

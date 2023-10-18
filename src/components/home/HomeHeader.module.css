@@ -1,0 +1,89 @@
+.homeContainer,
+.welcomeTextContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  color: #19255f;
+}
+
+.homeContainer {
+  height: 100%;
+  background-image: url('../../assets/cereals-563796_1280.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.welcomeTextContainer {
+  width: 100%;
+  background: linear-gradient(to right, white, transparent);
+  gap: 3rem;
+  padding: 10% 2%;
+}
+
+.welcomeTextContainer p {
+  margin: 0;
+}
+
+.smallMessage {
+  font-size: 1.8rem;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #da480e;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  box-shadow: 8px 8px 0px 0px rgb(218, 72, 14, 1);
+}
+
+.welcomeTextContainer h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.averageText {
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.8rem;
+  width: 50%;
+}
+
+.learnMoreLink {
+  text-decoration: none;
+  color: #fff;
+  background-color: #da480e;
+  padding: 0.8rem 1.6rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 6px 6px 0px 0px rgba(34, 32, 83, 1);
+}
+
+.learnMoreLink:hover {
+  font-size: 1rem;
+  border: 1px solid #da480e;
+  background-color: #19255f;
+}
+
+@media only screen and (max-width: 768px) {
+  .welcomeTextContainer {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .welcomeTextContainer h1,
+  .smallMessage,
+  .averageText {
+    text-align: center;
+  }
+
+  .averageText {
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.8rem;
+    width: 100%;
+  }
+}

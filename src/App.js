@@ -1,9 +1,17 @@
-import { useState } from 'react';
-
+import { Fragment, useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Header from './components/Layout/Header';
-import Meals from './components/Meals/Meals';
+import Home from './components/home/Home';
+import Products from './components/Products/Products';
+import ProductDetails from './components/Products/ProductDetails/ProductDetails';
+import Authentication from './components/auth/Authentication';
+import About from './components/About/About';
 import Cart from './components/Cart/Cart';
-import CartProvider from './store/CartProvider';
+import Footer from './components/Footer/Footer';
+import ContactButton from './components/contact/ContactButton';
+import AddProduct from './components/Admin/AddProduct';
+import PurchaseHistoryList from './components/histrory/PurchaseHistoryList';
+import './App.css';
 
 function App() {
   const [cartIsShown, setCartIsShown] = useState(false);
@@ -17,13 +25,23 @@ function App() {
   };
 
   return (
-    <CartProvider>
+    <Fragment>
       {cartIsShown && <Cart onClose={hideCartHandler} />}
-      <Header onShowCart={showCartHandler} />
+      <Header onClick={showCartHandler} />
       <main>
-        <Meals />
+        <Routes>
+          <Route path="/" index element={<Home />} />
+          <Route path="/products" index element={<Products />} />
+          <Route path="/products/:id" index element={<ProductDetails />} />
+          <Route path="/about" index element={<About />} />
+          <Route exact path="/auth" element={<Authentication />} />
+          <Route exact path="/admin" element={<AddProduct />} />
+          <Route exact path="/transactions" element={<PurchaseHistoryList />} />
+        </Routes>
       </main>
-    </CartProvider>
+      <ContactButton />
+      <Footer />
+    </Fragment>
   );
 }
 

@@ -1,0 +1,30 @@
+.summary {
+  text-align: center;
+  width: 70%;
+  margin: auto;
+  margin-top: 4rem;
+  position: relative;
+  background-color: #fff;
+  color: #141c42;
+  border-radius: 14px;
+  border: 1px solid #d3d3d3;
+  padding: 1rem;
+  box-shadow: 8px 8px 0px 0px rgba(34, 32, 83, 1);
+}
+
+.summary h2 {
+  font-size: 1.5rem;
+  margin-top: 0;
+}
+
+.summary p {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+@media only screen and (max-width: 768px) {
+  .summary {
+    margin-top: 2rem;
+    width: 90%;
+  }
+}
