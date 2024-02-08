@@ -25,7 +25,7 @@ export const logInUser = createAsyncThunk(
   async (userInput, thunkAPI) => {
     try {
       const response = await axios.post(
-        'http://localhost:3000/auth/login',
+        'https://dura-server.onrender.com/auth/login',
         userInput
       );
       const responseData = response.data;
@@ -49,11 +49,14 @@ export const logOutUser = createAsyncThunk(
   'auth/logout',
   async (_, thunkAPI) => {
     try {
-      const response = await axios.delete('http://localhost:3000/auth/logout', {
-        headers: {
-          authorization: thunkAPI.getState().auth.token,
-        },
-      });
+      const response = await axios.delete(
+        'https://dura-server.onrender.com/auth/logout',
+        {
+          headers: {
+            authorization: thunkAPI.getState().auth.token,
+          },
+        }
+      );
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue('something went wrong!');
@@ -65,7 +68,7 @@ export const registerUser = createAsyncThunk(
   async (userInput, thunkAPI) => {
     try {
       const response = await axios.post(
-        'http://localhost:3000/users',
+        'https://dura-server.onrender.com/users',
         userInput
       );
 

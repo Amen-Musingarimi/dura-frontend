@@ -6,9 +6,12 @@ import { getLocalStorage } from '../components/helpers/localStorage';
 export const fetchCart = createAsyncThunk('cart/fetchCart', async () => {
   const token = getLocalStorage('token');
   const cart_id = getLocalStorage('cart_id');
-  const response = await axios.get(`http://localhost:3000/carts/${cart_id}`, {
-    headers: { Authorization: `Bearer ${token}` },
-  });
+  const response = await axios.get(
+    `https://dura-server.onrender.com/carts/${cart_id}`,
+    {
+      headers: { Authorization: `Bearer ${token}` },
+    }
+  );
   const responceData = response.data;
 
   const cart = responceData;
@@ -21,9 +24,13 @@ export const fetchCart = createAsyncThunk('cart/fetchCart', async () => {
 // Async action for adding an item to the cart
 export const addItemAsync = createAsyncThunk('cart/addItem', async (item) => {
   const token = getLocalStorage('token');
-  const response = await axios.post('http://localhost:3000/cart_items', item, {
-    headers: { Authorization: `Bearer ${token}` },
-  });
+  const response = await axios.post(
+    'https://dura-server.onrender.com/cart_items',
+    item,
+    {
+      headers: { Authorization: `Bearer ${token}` },
+    }
+  );
   return response.data;
 });
 
@@ -33,7 +40,7 @@ export const updateItemAsync = createAsyncThunk(
   async (item) => {
     const token = getLocalStorage('token');
     const response = await axios.patch(
-      `http://localhost:3000/cart_items/${item.id}`,
+      `https://dura-server.onrender.com/cart_items/${item.id}`,
       item,
       {
         headers: { Authorization: `Bearer ${token}` },
@@ -48,7 +55,7 @@ export const removeItemAsync = createAsyncThunk(
   'cart/removeItem',
   async (id) => {
     const token = getLocalStorage('token');
-    await axios.delete(`http://localhost:3000/cart_items/${id}`, {
+    await axios.delete(`https://dura-server.onrender.com/cart_items/${id}`, {
       headers: { Authorization: `Bearer ${token}` },
     });
     return id;
@@ -59,9 +66,12 @@ export const removeItemAsync = createAsyncThunk(
 export const clearCartAsync = createAsyncThunk('cart/clearCart', async () => {
   const token = getLocalStorage('token');
   const cart_id = getLocalStorage('cart_id');
-  await axios.delete(`http://localhost:3000/carts/${cart_id}/destroy_all`, {
-    headers: { Authorization: `Bearer ${token}` },
-  });
+  await axios.delete(
+    `https://dura-server.onrender.com/carts/${cart_id}/destroy_all`,
+    {
+      headers: { Authorization: `Bearer ${token}` },
+    }
+  );
 });
 
 const cartSlice = createSlice({
