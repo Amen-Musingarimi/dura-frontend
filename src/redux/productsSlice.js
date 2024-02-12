@@ -24,7 +24,7 @@ export const addProductAsync = createAsyncThunk(
       formData.append('product[image_url]', newProduct.image);
 
       const response = await fetch(
-        'https://dura-server.onrender.com/products',
+        'https://dura-server-chyy.onrender.com/products',
         {
           method: 'POST',
           headers: {
@@ -46,7 +46,9 @@ export const addProductAsync = createAsyncThunk(
 export const getProductsAsync = createAsyncThunk(
   'products/getProductsAsync',
   async () => {
-    const response = await fetch('https://dura-server.onrender.com/products');
+    const response = await fetch(
+      'https://dura-server-chyy.onrender.com/products'
+    );
     if (response.ok) {
       const data = await response.json();
       const products = data;

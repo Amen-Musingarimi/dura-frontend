@@ -9,7 +9,7 @@ export const fetchPurchaseHistoryAsync = createAsyncThunk(
     const user = getLocalStorage('user');
     const user_id = user.id;
     const response = await axios.get(
-      `https://dura-server.onrender.com/purchase_histories/${user_id}`,
+      `https://dura-server-chyy.onrender.com/purchase_histories/${user_id}`,
       {
         headers: { Authorization: `Bearer ${token}` },
       }
@@ -23,7 +23,7 @@ export const createPurchaseHistoryAsync = createAsyncThunk(
   async (purchaseData) => {
     const token = getLocalStorage('token');
     const response = await axios.post(
-      'https://dura-server.onrender.com/cart_items/order',
+      'https://dura-server-chyy.onrender.com/cart_items/order',
       purchaseData,
       {
         headers: { Authorization: `Bearer ${token}` },

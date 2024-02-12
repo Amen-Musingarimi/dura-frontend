@@ -25,7 +25,7 @@ export const logInUser = createAsyncThunk(
   async (userInput, thunkAPI) => {
     try {
       const response = await axios.post(
-        'https://dura-server.onrender.com/auth/login',
+        'https://dura-server-chyy.onrender.com/auth/login',
         userInput
       );
       const responseData = response.data;
@@ -50,7 +50,7 @@ export const logOutUser = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const response = await axios.delete(
-        'https://dura-server.onrender.com/auth/logout',
+        'https://dura-server-chyy.onrender.com/auth/logout',
         {
           headers: {
             authorization: thunkAPI.getState().auth.token,
@@ -68,7 +68,7 @@ export const registerUser = createAsyncThunk(
   async (userInput, thunkAPI) => {
     try {
       const response = await axios.post(
-        'https://dura-server.onrender.com/users',
+        'https://dura-server-chyy.onrender.com/users',
         userInput
       );
 

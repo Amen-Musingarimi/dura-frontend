@@ -7,7 +7,7 @@ export const fetchCart = createAsyncThunk('cart/fetchCart', async () => {
   const token = getLocalStorage('token');
   const cart_id = getLocalStorage('cart_id');
   const response = await axios.get(
-    `https://dura-server.onrender.com/carts/${cart_id}`,
+    `https://dura-server-chyy.onrender.com/carts/${cart_id}`,
     {
       headers: { Authorization: `Bearer ${token}` },
     }
@@ -25,7 +25,7 @@ export const fetchCart = createAsyncThunk('cart/fetchCart', async () => {
 export const addItemAsync = createAsyncThunk('cart/addItem', async (item) => {
   const token = getLocalStorage('token');
   const response = await axios.post(
-    'https://dura-server.onrender.com/cart_items',
+    'https://dura-server-chyy.onrender.com/cart_items',
     item,
     {
       headers: { Authorization: `Bearer ${token}` },
@@ -40,7 +40,7 @@ export const updateItemAsync = createAsyncThunk(
   async (item) => {
     const token = getLocalStorage('token');
     const response = await axios.patch(
-      `https://dura-server.onrender.com/cart_items/${item.id}`,
+      `https://dura-server-chyy.onrender.com/cart_items/${item.id}`,
       item,
       {
         headers: { Authorization: `Bearer ${token}` },
@@ -55,9 +55,12 @@ export const removeItemAsync = createAsyncThunk(
   'cart/removeItem',
   async (id) => {
     const token = getLocalStorage('token');
-    await axios.delete(`https://dura-server.onrender.com/cart_items/${id}`, {
-      headers: { Authorization: `Bearer ${token}` },
-    });
+    await axios.delete(
+      `https://dura-server-chyy.onrender.com/cart_items/${id}`,
+      {
+        headers: { Authorization: `Bearer ${token}` },
+      }
+    );
     return id;
   }
 );
@@ -67,7 +70,7 @@ export const clearCartAsync = createAsyncThunk('cart/clearCart', async () => {
   const token = getLocalStorage('token');
   const cart_id = getLocalStorage('cart_id');
   await axios.delete(
-    `https://dura-server.onrender.com/carts/${cart_id}/destroy_all`,
+    `https://dura-server-chyy.onrender.com/carts/${cart_id}/destroy_all`,
     {
       headers: { Authorization: `Bearer ${token}` },
     }
